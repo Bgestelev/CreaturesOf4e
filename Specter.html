@@ -1,80 +1,111 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Specter - D&D 4E Statblock</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f1d0; padding: 20px; }
-        .statblock { width: 500px; background: #fff; border: 2px solid #000; padding: 10px; }
-        .header { background: #4b5320; color: white; padding: 10px; font-size: 20px; font-weight: bold; }
-        .subheader { background: #c8b68e; padding: 5px; font-size: 14px; font-style: italic; }
-        .section { background: #e8ddc3; padding: 10px; border-bottom: 1px solid #000; }
-        .action { background: #d6c8ae; padding: 5px; margin-top: 5px; border-left: 4px solid #4b5320; margin-bottom: 5px; }
-        .bold { font-weight: bold; }
-    </style>
-</head>
-<body>
-    <div class="statblock">
-        <div class="header">Specter - Level 4 lurker</div>
-        <div class="subheader">med shadow humanoid, Undead | Chaotic Evil</div>
-        <div class="section">
-            <span class="bold">Initiative:</span> 8 | <span class="bold">Senses:</span> Night Vision, Darkvision
-        </div>
-        <div class="section">
-            <span class="bold">HP:</span> 30 | <span class="bold">Bloodied:</span> 15
-        </div>
-        <div class="section">
-            <span class="bold">AC:</span> 16, <span class="bold">Fort:</span> 16, <span class="bold">Ref:</span> 16, <span class="bold">Will:</span> 17
-        </div>
-        <div class="section">
-            <span class="bold">Speed:</span> fly 6 (hover); phasing
-        </div>
-        <div class="section">
-            <span class="bold">Resistances:</span> 10 necrotic, insubstantial | <span class="bold">Vulnerabilities:</span> 5 radiant | <span class="bold">Immunities:</span> poison, disease
-        </div>
-        
-        
-        <div class="section">
-            <strong>Traits:</strong>
-            
-                <div class="action"><span class="bold">Spectral Chill</span> - Cold Aura 1 Each enemy within the aura takes a -2 penalty to all defenses.</div>
-            
-        </div>
-        
-
-        
-        <div class="section">
-            <strong>Actions:</strong>
-            
-                <div class="action">
-                    <span class="bold">Spectral Touch</span> (Power)<br>
-                    Basic Attack At-Will ✦ necrotic Standard Attack: Melee 1 (one creature) +7 vs. Reflex Hit: 1d6 + 2 necrotic damage.
-                </div>
-            
-                <div class="action">
-                    <span class="bold">Spectral Barrage</span> (Power)<br>
-                    Recharge 5-6 ✦ illusion, psychic Standard Attack: Close burst 2 (enemies in the burst) +7 vs. Will Hit: 2d6 + 2 psychic damage, and the target falls prone.
-                </div>
-            
-                <div class="action">
-                    <span class="bold">Invisibility</span> (Power)<br>
-                    At-Will ✦ illusion Standard Effect: The specter becomes invisible until it hits or misses with an attack.
-                </div>
-            
-        </div>
-        
-
-        <div class="section">
-            <span class="bold">Alignment:</span> Chaotic Evil |  <span class="bold">Languages:</span>  (written), Common (spoken)
-        </div>
-        <div class="section">
-            <span class="bold">Skills:</span> Perception +6, Stealth +9
-        </div>
-        <div class="section">
-            <span class="bold">Str</span> 10 (+2), <span class="bold">Con</span> 13 (+3), <span class="bold">Dex</span> 15 (+4), <span class="bold">Int</span> 6 (0), <span class="bold">Wis</span> 8 (+1), <span class="bold">Cha</span> 15 (+4)
-        </div>
+<style>
+    .statblock { 
+        max-width: 500px; 
+        background: #fff; 
+        font-family: Arial, sans-serif;
+    }
+    .header { 
+        background: #4b5320; 
+        color: white; 
+        padding: 10px; 
+        font-size: 20px; 
+        font-weight: bold; 
+    }
+    .subheader { 
+        background: #c8b68e; 
+        padding: 5px; 
+        font-size: 14px; 
+        font-style: italic; 
+    }
+    .section { 
+        background: #e8ddc3; 
+        padding: 10px; 
+        border-bottom: 1px solid #000; 
+    }
+    .action { 
+        padding: 5px; 
+        margin-top: 5px; 
+        border-left: 4px solid #4b5320; 
+        margin-bottom: 5px; 
+    }
+    .bold { 
+        font-weight: bold; 
+    }
+</style>
+<div class="statblock">
+    <div class="header">Specter - Level 4 lurker standard</div>
+    <div class="subheader">Medium shadow humanoid, Undead | Chaotic Evil</div>
+    <div class="section">
+        <span class="bold">Initiative:</span> 8 | <span class="bold">Senses:</span> Night Vision, Darkvision
     </div>
-</body>
-</html>
+    <div class="section">
+        <span class="bold">HP:</span> 30 | <span class="bold">Bloodied:</span> 15
+    </div>
+    <div class="section">
+        <span class="bold">AC:</span> 16, <span class="bold">Fort:</span> 16, <span class="bold">Ref:</span> 16, <span class="bold">Will:</span> 17
+    </div>
+    <div class="section">
+        <span class="bold">Speed:</span> fly 6 (hover); phasing
+    </div>
+    <div class="section">
+        <span class="bold">Resistances:</span> 10 necrotic, insubstantial | 
+        <span class="bold">Vulnerabilities:</span> 5 radiant | 
+        <span class="bold">Immunities:</span> poison, disease
+    </div>
+    
+    
+    <div class="section">
+        <strong>Traits:</strong>
+        
+            <div class="action">
+                <span class="bold">Spectral Chill</span> - Cold Aura 1 Each enemy within the aura takes a -2 penalty to all defenses.
+            </div>
+        
+    </div>
+    
+
+    
+    <div class="section">
+        <strong>Actions:</strong>
+        
+            
+            <div class="action" style="background-color: #90d390bf;">
+            
+                <span class="bold">Spectral Touch</span> (atwill)<br>
+                Basic Attack At-Will ✦ necrotic Standard Attack: Melee 1 (one creature) +7 vs. Reflex Hit: 1d6 + 2 necrotic damage.
+            </div>
+        
+            
+            <div class="action" style="background-color: #e4e473db;">
+            
+                <span class="bold">Spectral Barrage</span> (recharge)<br>
+                Recharge 5-6 ✦ illusion, psychic Standard Attack: Close burst 2 (enemies in the burst) +7 vs. Will Hit: 2d6 + 2 psychic damage, and the target falls prone.
+            </div>
+        
+            
+            <div class="action" style="background-color: #90d390bf;">
+            
+                <span class="bold">Invisibility</span> (atwill)<br>
+                At-Will ✦ illusion Standard Effect: The specter becomes invisible until it hits or misses with an attack.
+            </div>
+        
+    </div>
+    
+
+    <div class="section">
+        <span class="bold">Alignment:</span> Chaotic Evil |  
+        <span class="bold">Languages:</span>  (written), Common (spoken)
+    </div>
+    <div class="section">
+        <span class="bold">Skills:</span> Perception +6, Stealth +9
+    </div>
+    <div class="section">
+        <span class="bold">Str</span> 10 (+2), 
+        <span class="bold">Con</span> 13 (+3), 
+        <span class="bold">Dex</span> 15 (+4), 
+        <span class="bold">Int</span> 6 (0), 
+        <span class="bold">Wis</span> 8 (+1), 
+        <span class="bold">Cha</span> 15 (+4)
+    </div>
+</div>
