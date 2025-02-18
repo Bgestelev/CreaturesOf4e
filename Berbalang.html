@@ -1,0 +1,162 @@
+
+<style>
+    .statblock { 
+        max-width: 500px; 
+        background: #fff; 
+        font-family: Arial, sans-serif;
+    }
+    .header { 
+        background: #4b5320; 
+        color: white; 
+        padding: 10px; 
+        font-size: 20px; 
+        font-weight: bold; 
+    }
+    .subheader { 
+        background: #c8b68e; 
+        padding: 5px; 
+        font-size: 14px; 
+        font-style: italic; 
+    }
+    /* Remove borders and alternate background colors for sections */
+    .statblock > .section {
+        padding: 10px;
+        border: none;
+    }
+    /* Reverse the alternating order: odd sections get #e8ddc3, even sections get #c8b68e */
+    .statblock > .section:nth-of-type(odd) {
+        background: #e8ddc3;
+    }
+    .statblock > .section:nth-of-type(even) {
+        background: #c8b68e;
+    }
+    details { 
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 5px;
+        border-left: 4px solid #4b5320;
+    }
+    details summary {
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .bold { 
+        font-weight: bold; 
+    }
+    .paired-stat {
+        display: flex;
+        flex-direction: column;
+    }
+    /* New attribute section style: display as a row */
+    .attribute-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+</style>
+<div class="statblock">
+    <div class="header">Berbalang - Level 10 skirmisher / solo</div>
+    <div class="subheader">
+        <span style="float: left;">Medium immortal humanoid | Evil</span>
+        <span style="float: right;">XP: 2500</span>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="section">
+        <span class="bold">Initiative:</span> +13 | <span class="bold">Senses:</span> Normal Vision
+    </div>
+    <div class="section">
+        <span class="bold">HP:</span> 408 | <span class="bold">Bloodied:</span> 204
+    </div>
+    <div class="section">
+        <span class="bold">AC:</span> 25, <span class="bold">Fort:</span> 22, <span class="bold">Ref:</span> 25, <span class="bold">Will:</span> 21
+    </div>
+    <div class="section">
+        <span class="bold">Speed:</span> 6, fly 8
+    </div>
+    
+    <div class="section">
+        <span class="bold">Action Points:</span> 2
+    </div>
+    
+    <div class="section">
+        <span class="bold">Resistances:</span>  | 
+        <span class="bold">Vulnerabilities:</span>  | 
+        <span class="bold">Immunities:</span> 
+    </div>
+    
+    
+    <div class="section">
+        <strong>Traits:</strong>
+        
+        <details>
+            <summary>Berbalang Sneak Attack</summary>
+            <div>A berbalang or a duplicate that flanks an enemy with another duplicate deals an extra 1d8 damage on melee attacks against that enemy.</div>
+        </details>
+        
+    </div>
+    
+    
+    
+    <div class="section">
+        <strong>Actions:</strong>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Claw</span> (at-will)</summary>
+                <div>Basic Attack At-Will Standard +14 vs AC;<br>1d8+6 damage.</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Sacrifice</span> (at-will)</summary>
+                <div>At-Will ✦ Psychic Standard Area burst 1 centered on a duplicate +11 vs Fortitude;<br>2d8+6 psychic damage, plus the target is dazed (save ends). Miss:<br>No damage, but the target is dazed (save ends). Hit or Miss:<br>The berbalang takes 25 damage.</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Summon Duplicate</span> (at-will)</summary>
+                <div>At-Will ✦ Conjuration, Psychic Minor The berbalang manifests an exact duplicate of itself in an unoccupied adjacent square. It can have no more than four duplicates at once, and duplicates cannot summon other duplicates. When a duplicate appears, it makes an initiative check and joins the battle on that initiative count. All damage a duplicate deals is treated as psychic damage. A duplicate has the same statistics as the berbalang except for its hit points. When the berbalang manifests a duplicate, the berbalang loses one-quarter of its current hit points and the duplicate appears with that quantity of hit points. The berbalang's maximum number of hit points remains the same. Duplicates last until the berbalang reaches 0 hit points, absorbs them, or uses sacrifice. A duplicate must stay within 10 squares of the berbalang at all times or it disappears.</div>
+            </details>
+        
+            
+            <details>
+            
+                <summary><span class="bold">Absorb Duplicate</span> (other)</summary>
+                <div>Healing Standard The berbalang absorbs a duplicate adjacent to it and regains 50 hit points</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Psychic Deflection</span> (at-will)</summary>
+                <div>At-Will ✦ Psychic Immediate Reaction Trigger:<br>When the berbalang is hit by an attack The berbalang can deflect the damage it takes from an attack to one of its duplicates. Any effects or secondary attacks included in the attack are also deflected to the duplicate. The damage a duplicate takes in this way is considered psychic damage.</div>
+            </details>
+        
+    </div>
+    
+    
+    <div class="section">
+        <span class="bold">Languages:</span>  (written), Supernal (spoken)
+    </div>
+    <div class="section">
+        <span class="bold">Skills:</span> Perception +6
+    </div>
+    <div class="section attribute-section">
+        <div class="paired-stat">
+            <div><span class="bold">Str</span> 16 (+8)</div>
+            <div><span class="bold">Con</span> 14 (+7)</div>
+        </div>
+        <div class="paired-stat">
+            <div><span class="bold">Dex</span> 22 (+11)</div>
+            <div><span class="bold">Int</span> 14 (+7)</div>
+        </div>
+        <div class="paired-stat">
+            <div><span class="bold">Wis</span> 13 (+6)</div>
+            <div><span class="bold">Cha</span> 15 (+7)</div>
+        </div>
+    </div>
+    
+</div>

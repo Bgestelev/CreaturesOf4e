@@ -1,0 +1,144 @@
+
+<style>
+    .statblock { 
+        max-width: 500px; 
+        background: #fff; 
+        font-family: Arial, sans-serif;
+    }
+    .header { 
+        background: #4b5320; 
+        color: white; 
+        padding: 10px; 
+        font-size: 20px; 
+        font-weight: bold; 
+    }
+    .subheader { 
+        background: #c8b68e; 
+        padding: 5px; 
+        font-size: 14px; 
+        font-style: italic; 
+    }
+    /* Remove borders and alternate background colors for sections */
+    .statblock > .section {
+        padding: 10px;
+        border: none;
+    }
+    /* Reverse the alternating order: odd sections get #e8ddc3, even sections get #c8b68e */
+    .statblock > .section:nth-of-type(odd) {
+        background: #e8ddc3;
+    }
+    .statblock > .section:nth-of-type(even) {
+        background: #c8b68e;
+    }
+    details { 
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 5px;
+        border-left: 4px solid #4b5320;
+    }
+    details summary {
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .bold { 
+        font-weight: bold; 
+    }
+    .paired-stat {
+        display: flex;
+        flex-direction: column;
+    }
+    /* New attribute section style: display as a row */
+    .attribute-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+</style>
+<div class="statblock">
+    <div class="header">Deathjump Spider - Level 4 skirmisher / standard</div>
+    <div class="subheader">
+        <span style="float: left;">Medium natural beast, Spider | Unaligned</span>
+        <span style="float: right;">XP: 175</span>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="section">
+        <span class="bold">Initiative:</span> +5 | <span class="bold">Senses:</span> Normal Vision, Tremorsense 5
+    </div>
+    <div class="section">
+        <span class="bold">HP:</span> 52 | <span class="bold">Bloodied:</span> 26
+    </div>
+    <div class="section">
+        <span class="bold">AC:</span> 18, <span class="bold">Fort:</span> 17, <span class="bold">Ref:</span> 16, <span class="bold">Will:</span> 15
+    </div>
+    <div class="section">
+        <span class="bold">Speed:</span> 6, climb 6 (spider climb)
+    </div>
+    
+    <div class="section">
+        <span class="bold">Resistances:</span> 5 poison | 
+        <span class="bold">Vulnerabilities:</span>  | 
+        <span class="bold">Immunities:</span> 
+    </div>
+    
+    
+    <div class="section">
+        <strong>Traits:</strong>
+        
+        <details>
+            <summary>Web Walk</summary>
+            <div>The spider ignores difficult terrain composed of webs.</div>
+        </details>
+        
+    </div>
+    
+    
+    
+    <div class="section">
+        <strong>Actions:</strong>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Bite</span> (at-will)</summary>
+                <div>Basic Attack At-Will ✦ poison Standard Attack:<br>Melee 1 (one creature) +9 vs. AC Hit:<br>1d6 + 3 damage, and the target takes ongoing 5 poison damage (save ends).</div>
+            </details>
+        
+            
+            <details style="background-color: #e4e473db;">
+            
+                <summary><span class="bold">Death from Above</span> (recharge)</summary>
+                <div>Recharge 4-6 Standard Effect:<br>The spider jumps up to 6 squares. This movement does not provoke opportunity attacks. After the jump, the spider uses bite, knocking the target prone on a hit.</div>
+            </details>
+        
+            
+            <details style="background-color: #ae1a328c;">
+            
+                <summary><span class="bold">Prodigious Leap</span> (encounter)</summary>
+                <div>Encounter Move Effect:<br>The spider jumps up to 10 squares. This movement does not provoke opportunity attacks.</div>
+            </details>
+        
+    </div>
+    
+    
+    <div class="section">
+        <span class="bold">Languages:</span>  (written),  (spoken)
+    </div>
+    <div class="section">
+        <span class="bold">Skills:</span> Athletics +9, Perception +7, Stealth +8
+    </div>
+    <div class="section attribute-section">
+        <div class="paired-stat">
+            <div><span class="bold">Str</span> 14 (+4)</div>
+            <div><span class="bold">Con</span> 12 (+3)</div>
+        </div>
+        <div class="paired-stat">
+            <div><span class="bold">Dex</span> 12 (+3)</div>
+            <div><span class="bold">Int</span> 1 (-3)</div>
+        </div>
+        <div class="paired-stat">
+            <div><span class="bold">Wis</span> 10 (+2)</div>
+            <div><span class="bold">Cha</span> 8 (+1)</div>
+        </div>
+    </div>
+    
+</div>

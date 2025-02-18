@@ -1,0 +1,156 @@
+
+<style>
+    .statblock { 
+        max-width: 500px; 
+        background: #fff; 
+        font-family: Arial, sans-serif;
+    }
+    .header { 
+        background: #4b5320; 
+        color: white; 
+        padding: 10px; 
+        font-size: 20px; 
+        font-weight: bold; 
+    }
+    .subheader { 
+        background: #c8b68e; 
+        padding: 5px; 
+        font-size: 14px; 
+        font-style: italic; 
+    }
+    /* Remove borders and alternate background colors for sections */
+    .statblock > .section {
+        padding: 10px;
+        border: none;
+    }
+    /* Reverse the alternating order: odd sections get #e8ddc3, even sections get #c8b68e */
+    .statblock > .section:nth-of-type(odd) {
+        background: #e8ddc3;
+    }
+    .statblock > .section:nth-of-type(even) {
+        background: #c8b68e;
+    }
+    details { 
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 5px;
+        border-left: 4px solid #4b5320;
+    }
+    details summary {
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .bold { 
+        font-weight: bold; 
+    }
+    .paired-stat {
+        display: flex;
+        flex-direction: column;
+    }
+    /* New attribute section style: display as a row */
+    .attribute-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+</style>
+<div class="statblock">
+    <div class="header">Displacer Beast - Level 9 skirmisher / standard</div>
+    <div class="subheader">
+        <span style="float: left;">Large fey magical | Unaligned</span>
+        <span style="float: right;">XP: 400</span>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="section">
+        <span class="bold">Initiative:</span> +11 | <span class="bold">Senses:</span> Normal Vision, Low-light Vision
+    </div>
+    <div class="section">
+        <span class="bold">HP:</span> 97 | <span class="bold">Bloodied:</span> 48
+    </div>
+    <div class="section">
+        <span class="bold">AC:</span> 23, <span class="bold">Fort:</span> 21, <span class="bold">Ref:</span> 22, <span class="bold">Will:</span> 20
+    </div>
+    <div class="section">
+        <span class="bold">Speed:</span> 12
+    </div>
+    
+    <div class="section">
+        <span class="bold">Resistances:</span>  | 
+        <span class="bold">Vulnerabilities:</span>  | 
+        <span class="bold">Immunities:</span> 
+    </div>
+    
+    
+    <div class="section">
+        <strong>Traits:</strong>
+        
+        <details>
+            <summary>Displacement</summary>
+            <div>Illusion When a melee or a ranged attack hits the displacer beast, if the player rolled an odd number on the attack roll, the attack misses. If the player rolled an even number on the attack roll, the attack hits as normal, and the beast loses this trait until the start of its next turn.</div>
+        </details>
+        
+        <details>
+            <summary>Threatening Reach</summary>
+            <div>The displacer beast can make opportunity attacks against enemies within 2 squares of it.</div>
+        </details>
+        
+    </div>
+    
+    
+    
+    <div class="section">
+        <strong>Actions:</strong>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Tentacle</span> (at-will)</summary>
+                <div>Basic Attack At-Will Standard Attack:<br>Melee 2 (one creature) +14 vs. AC Hit:<br>2d6 + 7 damage.</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Bite</span> (at-will)</summary>
+                <div>At-Will Standard Attack:<br>Melee 1 (one creature) +14 vs. AC Hit:<br>2d10 + 6 damage.</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Cunning Blitz</span> (at-will)</summary>
+                <div>At-Will Standard Effect:<br>The displacer beast shifts up to half its speed. At any point during that movement, it uses tentacle once, or two times against different creatures.</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Shifting Tactics</span> (at-will)</summary>
+                <div>At-Will Triggered Trigger:<br>An attack misses the displacer beast. Effect (Free Action):<br>The displacer beast shifts 1 square.</div>
+            </details>
+        
+    </div>
+    
+    
+    <div class="section">
+        <span class="bold">Languages:</span>  (written),  (spoken)
+    </div>
+    <div class="section">
+        <span class="bold">Skills:</span> Perception +12, Stealth +14
+    </div>
+    <div class="section attribute-section">
+        <div class="paired-stat">
+            <div><span class="bold">Str</span> 18 (+8)</div>
+            <div><span class="bold">Con</span> 17 (+7)</div>
+        </div>
+        <div class="paired-stat">
+            <div><span class="bold">Dex</span> 20 (+9)</div>
+            <div><span class="bold">Int</span> 4 (+1)</div>
+        </div>
+        <div class="paired-stat">
+            <div><span class="bold">Wis</span> 17 (+7)</div>
+            <div><span class="bold">Cha</span> 10 (+4)</div>
+        </div>
+    </div>
+    
+</div>

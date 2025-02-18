@@ -1,89 +1,169 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhorrent Reaper Terror - D&D 4E Statblock</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f1d0; padding: 20px; }
-        .statblock { width: 500px; background: #fff; border: 2px solid #000; padding: 10px; }
-        .header { background: #4b5320; color: white; padding: 10px; font-size: 20px; font-weight: bold; }
-        .subheader { background: #c8b68e; padding: 5px; font-size: 14px; font-style: italic; }
-        .section { background: #e8ddc3; padding: 10px; border-bottom: 1px solid #000; }
-        .action { background: #d6c8ae; padding: 5px; margin-top: 5px; border-left: 4px solid #4b5320; margin-bottom: 5px; }
-        .bold { font-weight: bold; }
-    </style>
-</head>
-<body>
-    <div class="statblock">
-        <div class="header">Abhorrent Reaper Terror - Level 26 soldier</div>
-        <div class="subheader">lg shadow humanoid, Undead | Evil</div>
-        <div class="section">
-            <span class="bold">Initiative:</span> 20 | <span class="bold">Senses:</span> Night Vision, Darkvision
-        </div>
-        <div class="section">
-            <span class="bold">HP:</span> 472 | <span class="bold">Bloodied:</span> 236
-        </div>
-        <div class="section">
-            <span class="bold">AC:</span> 42, <span class="bold">Fort:</span> 38, <span class="bold">Ref:</span> 35, <span class="bold">Will:</span> 37
-        </div>
-        <div class="section">
-            <span class="bold">Speed:</span> fly 12 (hover)
-        </div>
-        <div class="section">
-            <span class="bold">Resistances:</span> 10 necrotic | <span class="bold">Vulnerabilities:</span> 10 radiant | <span class="bold">Immunities:</span> poison, disease, fear
-        </div>
+<style>
+    .statblock { 
+        max-width: 500px; 
+        background: #fff; 
+        font-family: Arial, sans-serif;
+    }
+    .header { 
+        background: #4b5320; 
+        color: white; 
+        padding: 10px; 
+        font-size: 20px; 
+        font-weight: bold; 
+    }
+    .subheader { 
+        background: #c8b68e; 
+        padding: 5px; 
+        font-size: 14px; 
+        font-style: italic; 
+    }
+    /* Remove borders and alternate background colors for sections */
+    .statblock > .section {
+        padding: 10px;
+        border: none;
+    }
+    /* Reverse the alternating order: odd sections get #e8ddc3, even sections get #c8b68e */
+    .statblock > .section:nth-of-type(odd) {
+        background: #e8ddc3;
+    }
+    .statblock > .section:nth-of-type(even) {
+        background: #c8b68e;
+    }
+    details { 
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 5px;
+        border-left: 4px solid #4b5320;
+    }
+    details summary {
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .bold { 
+        font-weight: bold; 
+    }
+    .paired-stat {
+        display: flex;
+        flex-direction: column;
+    }
+    /* New attribute section style: display as a row */
+    .attribute-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+</style>
+<div class="statblock">
+    <div class="header">Abhorrent Reaper Terror - Level 26 soldier / elite leader</div>
+    <div class="subheader">
+        <span style="float: left;">Large shadow humanoid, Undead | Evil</span>
+        <span style="float: right;">XP: 18000</span>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="section">
+        <span class="bold">Initiative:</span> +20 | <span class="bold">Senses:</span> Normal Vision, Darkvision
+    </div>
+    <div class="section">
+        <span class="bold">HP:</span> 472 | <span class="bold">Bloodied:</span> 236
+    </div>
+    <div class="section">
+        <span class="bold">AC:</span> 42, <span class="bold">Fort:</span> 38, <span class="bold">Ref:</span> 35, <span class="bold">Will:</span> 37
+    </div>
+    <div class="section">
+        <span class="bold">Speed:</span> 8, fly 12 (hover)
+    </div>
+    
+    <div class="section">
+        <span class="bold">Action Points:</span> 1
+    </div>
+    
+    <div class="section">
+        <span class="bold">Resistances:</span> 10 necrotic | 
+        <span class="bold">Vulnerabilities:</span> 10 radiant | 
+        <span class="bold">Immunities:</span> poison, disease, fear
+    </div>
+    
+    
+    <div class="section">
+        <strong>Traits:</strong>
         
+        <details>
+            <summary>Regeneration 15</summary>
+            <div>If an abhorrent reaper takes radiant damage, regeneration doesn't function until the end of its next turn.</div>
+        </details>
         
-        <div class="section">
-            <strong>Traits:</strong>
-            
-                <div class="action"><span class="bold">Regeneration 15</span> - If an abhorrent reaper takes radiant damage, regeneration doesn't function until the end of its next turn.</div>
-            
-                <div class="action"><span class="bold">Aura of Ruin</span> - Aura 5 Any ally within the aura deals 1d6 extra necrotic damage with melee attacks.</div>
-            
-                <div class="action"><span class="bold">Bloodthirst</span> - When an abhorrent reaper bloodies an enemy, one of the abhorrent reaper's allies can make a melee basic attack against the bloodied creature as a free action.</div>
-            
-        </div>
+        <details>
+            <summary>Aura of Ruin</summary>
+            <div>Aura 5 Any ally within the aura deals 1d6 extra necrotic damage with melee attacks.</div>
+        </details>
         
-
+        <details>
+            <summary>Bloodthirst</summary>
+            <div>When an abhorrent reaper bloodies an enemy, one of the abhorrent reaper's allies can make a melee basic attack against the bloodied creature as a free action.</div>
+        </details>
         
-        <div class="section">
-            <strong>Actions:</strong>
-            
-                <div class="action">
-                    <span class="bold">Abhorrent Sickle</span> (Power)<br>
-                    Basic Attack At-Will ✦ Necrotic, Weapon Standard Reach 2 +33 vs AC; 3d8+9 necrotic damage.
-                </div>
-            
-                <div class="action">
-                    <span class="bold">Hateful Charge</span> (Power)<br>
-                    At-Will ✦ Necrotic, Weapon Standard Trigger: When charging, at-will +33 vs AC; 3d8+9 necrotic damage, and the target is knocked prone and is immobilized until the end of the abhorrent reaper's next turn.
-                </div>
-            
-                <div class="action">
-                    <span class="bold">Hate's Cleave</span> (Power)<br>
-                    At-Will ✦ Necrotic, Weapon Standard Close burst 2 Targets enemies; +31 vs AC; 4d6+9 necrotic damage.
-                </div>
-            
-                <div class="action">
-                    <span class="bold">Umbral Phantasm</span> (Power)<br>
-                    Recharge 5-6 Immediate Interrupt Trigger: When the abhorrent reaper would take damage The abhorrent reaper terror becomes insubstantial until it attacks or until the end of its next turn.
-                </div>
-            
-        </div>
+    </div>
+    
+    
+    
+    <div class="section">
+        <strong>Actions:</strong>
         
-
-        <div class="section">
-            <span class="bold">Alignment:</span> Evil |  <span class="bold">Languages:</span>  (written), Common (spoken)
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Abhorrent Sickle</span> (at-will)</summary>
+                <div>Basic Attack At-Will ✦ Necrotic, Weapon Standard Reach 2 +33 vs AC;<br>3d8+9 necrotic damage.</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Hateful Charge</span> (at-will)</summary>
+                <div>At-Will ✦ Necrotic, Weapon Standard Trigger:<br>When charging, at-will +33 vs AC;<br>3d8+9 necrotic damage, and the target is knocked prone and is immobilized until the end of the abhorrent reaper's next turn.</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Hate's Cleave</span> (at-will)</summary>
+                <div>At-Will ✦ Necrotic, Weapon Standard Close burst 2 Targets enemies;<br>+31 vs AC;<br>4d6+9 necrotic damage.</div>
+            </details>
+        
+            
+            <details style="background-color: #e4e473db;">
+            
+                <summary><span class="bold">Umbral Phantasm</span> (recharge)</summary>
+                <div>Recharge 5-6 Immediate Interrupt Trigger:<br>When the abhorrent reaper would take damage The abhorrent reaper terror becomes insubstantial until it attacks or until the end of its next turn.</div>
+            </details>
+        
+    </div>
+    
+    
+    <div class="section">
+        <span class="bold">Languages:</span>  (written), Common (spoken)
+    </div>
+    <div class="section">
+        <span class="bold">Skills:</span> Intimidate +25, Perception +16
+    </div>
+    <div class="section attribute-section">
+        <div class="paired-stat">
+            <div><span class="bold">Str</span> 27 (+21)</div>
+            <div><span class="bold">Con</span> 20 (+18)</div>
         </div>
-        <div class="section">
-            <span class="bold">Skills:</span> Intimidate +25, Perception +16
+        <div class="paired-stat">
+            <div><span class="bold">Dex</span> 21 (+18)</div>
+            <div><span class="bold">Int</span> 18 (+17)</div>
         </div>
-        <div class="section">
-            <span class="bold">Str</span> 27 (+8), <span class="bold">Con</span> 20 (+5), <span class="bold">Dex</span> 21 (+5), <span class="bold">Int</span> 18 (+4), <span class="bold">Wis</span> 16 (+3), <span class="bold">Cha</span> 24 (+7)
+        <div class="paired-stat">
+            <div><span class="bold">Wis</span> 16 (+16)</div>
+            <div><span class="bold">Cha</span> 24 (+20)</div>
         </div>
     </div>
-</body>
-</html>
+    
+    <div class="section">
+        <span class="bold">Equipment:</span> robes, sickle .
+    </div>
+    
+</div>

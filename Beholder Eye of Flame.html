@@ -1,0 +1,155 @@
+
+<style>
+    .statblock { 
+        max-width: 500px; 
+        background: #fff; 
+        font-family: Arial, sans-serif;
+    }
+    .header { 
+        background: #4b5320; 
+        color: white; 
+        padding: 10px; 
+        font-size: 20px; 
+        font-weight: bold; 
+    }
+    .subheader { 
+        background: #c8b68e; 
+        padding: 5px; 
+        font-size: 14px; 
+        font-style: italic; 
+    }
+    /* Remove borders and alternate background colors for sections */
+    .statblock > .section {
+        padding: 10px;
+        border: none;
+    }
+    /* Reverse the alternating order: odd sections get #e8ddc3, even sections get #c8b68e */
+    .statblock > .section:nth-of-type(odd) {
+        background: #e8ddc3;
+    }
+    .statblock > .section:nth-of-type(even) {
+        background: #c8b68e;
+    }
+    details { 
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 5px;
+        border-left: 4px solid #4b5320;
+    }
+    details summary {
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .bold { 
+        font-weight: bold; 
+    }
+    .paired-stat {
+        display: flex;
+        flex-direction: column;
+    }
+    /* New attribute section style: display as a row */
+    .attribute-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+</style>
+<div class="statblock">
+    <div class="header">Beholder Eye of Flame - Level 13 artillery / elite</div>
+    <div class="subheader">
+        <span style="float: left;">Large aberrant magical | Evil</span>
+        <span style="float: right;">XP: 1600</span>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="section">
+        <span class="bold">Initiative:</span> +11 | <span class="bold">Senses:</span> Normal Vision, All-around Vision, Darkvision
+    </div>
+    <div class="section">
+        <span class="bold">HP:</span> 204 | <span class="bold">Bloodied:</span> 102
+    </div>
+    <div class="section">
+        <span class="bold">AC:</span> 26, <span class="bold">Fort:</span> 26, <span class="bold">Ref:</span> 27, <span class="bold">Will:</span> 28
+    </div>
+    <div class="section">
+        <span class="bold">Speed:</span> 6, fly 6 (hover)
+    </div>
+    
+    <div class="section">
+        <span class="bold">Action Points:</span> 1
+    </div>
+    
+    <div class="section">
+        <span class="bold">Resistances:</span>  | 
+        <span class="bold">Vulnerabilities:</span>  | 
+        <span class="bold">Immunities:</span> 
+    </div>
+    
+    
+    <div class="section">
+        <strong>Traits:</strong>
+        
+        <details>
+            <summary>Eyes of the Beholder</summary>
+            <div>Aura 5 At the start of each enemy's turn, if that creature is within the aura and in the eye of flame's line of sight, the eye of flame uses one random eye ray power against that creature.</div>
+        </details>
+        
+    </div>
+    
+    
+    
+    <div class="section">
+        <strong>Actions:</strong>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Bite</span> (at-will)</summary>
+                <div>Basic Attack At-Will Standard +18 vs AC;<br>2d6 damage.</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Central Eye</span> (at-will)</summary>
+                <div>At-Will Minor, At-Will Ranged 8 The target gains vulnerable 10 fire, and any attack that deals fire damage to the target also deals ongoing 5 fire damage (save ends both).</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Eye Rays</span> (at-will)</summary>
+                <div>At-Will Standard, At-Will The eye of flame can use up to two eye ray powers (chosen from the list below), at least one of which must be a fire ray. Each power must target a different creature. Using eye rays does not provoke opportunity attacks. 1-Fire Ray (Fire):<br>range 8;<br>+17 vs. Reflex;<br>2d8 + 6 fire damage. 2-Telekinesis Ray:<br>range 8;<br>+17 vs. Fortitude;<br>the target slides 4 squares. 3-Fear Ray (Fear):<br>range 8;<br>+17 vs. Will;<br>the target moves its speed away from the eye of flame by the safest route possible and takes a -2 penalty to attack rolls (save ends)</div>
+            </details>
+        
+            
+            <details>
+            
+                <summary><span class="bold">Fiery Burst</span> (other)</summary>
+                <div>Fire Close burst 2 Trigger:<br>When first bloodied and again when the eye of flame is reduced to 0 hit points, +17 vs Reflex;<br>2d8+6 fire damage.</div>
+            </details>
+        
+    </div>
+    
+    
+    <div class="section">
+        <span class="bold">Languages:</span>  (written), DeepSpeech (spoken)
+    </div>
+    <div class="section">
+        <span class="bold">Skills:</span> Perception +15
+    </div>
+    <div class="section attribute-section">
+        <div class="paired-stat">
+            <div><span class="bold">Str</span> 10 (+6)</div>
+            <div><span class="bold">Con</span> 18 (+10)</div>
+        </div>
+        <div class="paired-stat">
+            <div><span class="bold">Dex</span> 20 (+11)</div>
+            <div><span class="bold">Int</span> 14 (+8)</div>
+        </div>
+        <div class="paired-stat">
+            <div><span class="bold">Wis</span> 19 (+10)</div>
+            <div><span class="bold">Cha</span> 23 (+12)</div>
+        </div>
+    </div>
+    
+</div>

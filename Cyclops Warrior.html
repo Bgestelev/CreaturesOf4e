@@ -1,0 +1,131 @@
+
+<style>
+    .statblock { 
+        max-width: 500px; 
+        background: #fff; 
+        font-family: Arial, sans-serif;
+    }
+    .header { 
+        background: #4b5320; 
+        color: white; 
+        padding: 10px; 
+        font-size: 20px; 
+        font-weight: bold; 
+    }
+    .subheader { 
+        background: #c8b68e; 
+        padding: 5px; 
+        font-size: 14px; 
+        font-style: italic; 
+    }
+    /* Remove borders and alternate background colors for sections */
+    .statblock > .section {
+        padding: 10px;
+        border: none;
+    }
+    /* Reverse the alternating order: odd sections get #e8ddc3, even sections get #c8b68e */
+    .statblock > .section:nth-of-type(odd) {
+        background: #e8ddc3;
+    }
+    .statblock > .section:nth-of-type(even) {
+        background: #c8b68e;
+    }
+    details { 
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 5px;
+        border-left: 4px solid #4b5320;
+    }
+    details summary {
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .bold { 
+        font-weight: bold; 
+    }
+    .paired-stat {
+        display: flex;
+        flex-direction: column;
+    }
+    /* New attribute section style: display as a row */
+    .attribute-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+</style>
+<div class="statblock">
+    <div class="header">Cyclops Warrior - Level 16  / minion</div>
+    <div class="subheader">
+        <span style="float: left;">Large fey humanoid | Unaligned</span>
+        <span style="float: right;">XP: 350</span>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="section">
+        <span class="bold">Initiative:</span> +11 | <span class="bold">Senses:</span> Normal Vision, Truesight 6
+    </div>
+    <div class="section">
+        <span class="bold">HP:</span> 1 | <span class="bold">Bloodied:</span> 0
+    </div>
+    <div class="section">
+        <span class="bold">AC:</span> 32, <span class="bold">Fort:</span> 31, <span class="bold">Ref:</span> 27, <span class="bold">Will:</span> 29
+    </div>
+    <div class="section">
+        <span class="bold">Speed:</span> 6
+    </div>
+    
+    <div class="section">
+        <span class="bold">Resistances:</span>  | 
+        <span class="bold">Vulnerabilities:</span>  | 
+        <span class="bold">Immunities:</span> 
+    </div>
+    
+    
+    
+    
+    <div class="section">
+        <strong>Actions:</strong>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Battleaxe</span> (at-will)</summary>
+                <div>Basic Attack At-Will ✦ Weapon Standard Reach 2 +22 vs AC;<br>8 damage.</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Evil Eye</span> (at-will)</summary>
+                <div>At-Will Immediate Reaction Trigger:<br>When a melee attack misses the cyclops warrior, at-will The cyclops warrior makes a melee basic attack against the attacker.</div>
+            </details>
+        
+    </div>
+    
+    
+    <div class="section">
+        <span class="bold">Languages:</span>  (written), Elven (spoken)
+    </div>
+    <div class="section">
+        <span class="bold">Skills:</span> Perception +18
+    </div>
+    <div class="section attribute-section">
+        <div class="paired-stat">
+            <div><span class="bold">Str</span> 25 (+15)</div>
+            <div><span class="bold">Con</span> 22 (+14)</div>
+        </div>
+        <div class="paired-stat">
+            <div><span class="bold">Dex</span> 16 (+11)</div>
+            <div><span class="bold">Int</span> 10 (+8)</div>
+        </div>
+        <div class="paired-stat">
+            <div><span class="bold">Wis</span> 20 (+13)</div>
+            <div><span class="bold">Cha</span> 13 (+9)</div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <span class="bold">Equipment:</span> battleaxe , heavy shield , hide armor .
+    </div>
+    
+</div>

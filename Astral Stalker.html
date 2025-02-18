@@ -1,0 +1,162 @@
+
+<style>
+    .statblock { 
+        max-width: 500px; 
+        background: #fff; 
+        font-family: Arial, sans-serif;
+    }
+    .header { 
+        background: #4b5320; 
+        color: white; 
+        padding: 10px; 
+        font-size: 20px; 
+        font-weight: bold; 
+    }
+    .subheader { 
+        background: #c8b68e; 
+        padding: 5px; 
+        font-size: 14px; 
+        font-style: italic; 
+    }
+    /* Remove borders and alternate background colors for sections */
+    .statblock > .section {
+        padding: 10px;
+        border: none;
+    }
+    /* Reverse the alternating order: odd sections get #e8ddc3, even sections get #c8b68e */
+    .statblock > .section:nth-of-type(odd) {
+        background: #e8ddc3;
+    }
+    .statblock > .section:nth-of-type(even) {
+        background: #c8b68e;
+    }
+    details { 
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 5px;
+        border-left: 4px solid #4b5320;
+    }
+    details summary {
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .bold { 
+        font-weight: bold; 
+    }
+    .paired-stat {
+        display: flex;
+        flex-direction: column;
+    }
+    /* New attribute section style: display as a row */
+    .attribute-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+</style>
+<div class="statblock">
+    <div class="header">Astral Stalker - Level 22 lurker / elite</div>
+    <div class="subheader">
+        <span style="float: left;">Medium immortal humanoid | Evil</span>
+        <span style="float: right;">XP: 8300</span>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="section">
+        <span class="bold">Initiative:</span> +23 | <span class="bold">Senses:</span> Normal Vision, Blindsight 10
+    </div>
+    <div class="section">
+        <span class="bold">HP:</span> 314 | <span class="bold">Bloodied:</span> 157
+    </div>
+    <div class="section">
+        <span class="bold">AC:</span> 38, <span class="bold">Fort:</span> 32, <span class="bold">Ref:</span> 38, <span class="bold">Will:</span> 32
+    </div>
+    <div class="section">
+        <span class="bold">Speed:</span> 10, Climb 6
+    </div>
+    
+    <div class="section">
+        <span class="bold">Action Points:</span> 1
+    </div>
+    
+    <div class="section">
+        <span class="bold">Resistances:</span>  | 
+        <span class="bold">Vulnerabilities:</span>  | 
+        <span class="bold">Immunities:</span> 
+    </div>
+    
+    
+    <div class="section">
+        <strong>Traits:</strong>
+        
+        <details>
+            <summary>Combat Advantage</summary>
+            <div>The astral stalker's melee attacks deal an extra 2d6 damage against any target it has combat advantage against.</div>
+        </details>
+        
+    </div>
+    
+    
+    
+    <div class="section">
+        <strong>Actions:</strong>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Claw</span> (at-will)</summary>
+                <div>Basic Attack At-Will Standard +27 vs AC;<br>2d6+8 damage, and the astral stalker can choose to designate the target as its quarry.</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Throat Dart</span> (at-will)</summary>
+                <div>Basic Attack At-Will ✦ Poison Standard Range 5/10;<br>+29 vs AC;<br>1d10+8 damage, and the target takes ongoing 5 poison damage and is slowed (save ends both). First Failed Save:<br>The target is immobilized instead of slowed (save ends). Second Failed Save:<br>The target is stunned instead of immobilized (save ends).</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Quick Claws</span> (at-will)</summary>
+                <div>At-Will Standard Against a slowed or an immobilized target, the astral stalker makes two claw attacks.</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Invisibility</span> (at-will)</summary>
+                <div>At-Will ✦ Illusion Standard The astral stalker turns invisible until it attacks.</div>
+            </details>
+        
+            
+            <details style="background-color: #90d390bf;">
+            
+                <summary><span class="bold">Stalker's Quarry</span> (at-will)</summary>
+                <div>At-Will Minor The astral stalker knows the exact location of a creature it has designated as its quarry. The astral stalker can have only one quarry at a time, but the power works across any distance and even crosses planar boundaries.</div>
+            </details>
+        
+    </div>
+    
+    
+    <div class="section">
+        <span class="bold">Languages:</span>  (written), Supernal (spoken)
+    </div>
+    <div class="section">
+        <span class="bold">Skills:</span> Perception +18, Stealth +24
+    </div>
+    <div class="section attribute-section">
+        <div class="paired-stat">
+            <div><span class="bold">Str</span> 22 (+17)</div>
+            <div><span class="bold">Con</span> 19 (+15)</div>
+        </div>
+        <div class="paired-stat">
+            <div><span class="bold">Dex</span> 26 (+19)</div>
+            <div><span class="bold">Int</span> 8 (+10)</div>
+        </div>
+        <div class="paired-stat">
+            <div><span class="bold">Wis</span> 15 (+13)</div>
+            <div><span class="bold">Cha</span> 10 (+11)</div>
+        </div>
+    </div>
+    
+</div>
