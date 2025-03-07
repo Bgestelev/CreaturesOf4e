@@ -23,7 +23,7 @@
         padding: 10px;
         border: none;
     }
-    /* Reverse the alternating order: odd sections get #e8ddc3, even sections get #c8b68e */
+    /* Alternate backgrounds in reversed order: odd sections get #e8ddc3, even get #c8b68e */
     .statblock > .section:nth-of-type(odd) {
         background: #e8ddc3;
     }
@@ -47,11 +47,27 @@
         display: flex;
         flex-direction: column;
     }
-    /* New attribute section style: display as a row */
+    /* Attribute section: display as a row */
     .attribute-section {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+    }
+    /* Style for the Apply button */
+    #applyDamageButton {
+        float: right;
+        border-radius: 5px; 
+        background-color: lemonchiffon; 
+        font-weight: bold; 
+        border-color: transparent; 
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+    #damageInput {
+        float: right; 
+        width: 80px; 
+        border-radius: 5px; 
+        border-color: transparent; 
+        margin-left: 10px;
     }
 </style>
 <div class="statblock">
@@ -67,6 +83,13 @@
     <div class="section">
         <span class="bold">HP:</span> 97 | <span class="bold">Bloodied:</span> 48
     </div>
+    <div class="section" id="currentLifeSection">
+        <span class="bold">Current Life:</span> 
+        <span id="currentLifeDisplay">97</span>
+        <input type="number" id="damageInput" placeholder="Damage" />
+        <button id="applyDamageButton">Apply</button>
+        <div style="clear:both;"></div>
+    </div>
     <div class="section">
         <span class="bold">AC:</span> 23, <span class="bold">Fort:</span> 21, <span class="bold">Ref:</span> 22, <span class="bold">Will:</span> 20
     </div>
@@ -79,7 +102,6 @@
         <span class="bold">Vulnerabilities:</span>  | 
         <span class="bold">Immunities:</span> 
     </div>
-    
     
     <div class="section">
         <strong>Traits:</strong>
@@ -95,7 +117,6 @@
         </details>
         
     </div>
-    
     
     
     <div class="section">
@@ -131,7 +152,6 @@
         
     </div>
     
-    
     <div class="section">
         <span class="bold">Languages:</span>  (written),  (spoken)
     </div>
@@ -154,3 +174,35 @@
     </div>
     
 </div>
+<script>
+(function(){
+    var currentLifeDisplay = document.getElementById("currentLifeDisplay");
+    var damageInput = document.getElementById("damageInput");
+    var applyButton = document.getElementById("applyDamageButton");
+    // Initialize current life to full HP
+    var currentLife = parseInt(currentLifeDisplay.innerText) || 0;
+    var bloodied = parseInt("48") || 0;
+    
+    function applyDamage(){
+        var damage = parseInt(damageInput.value) || 0;
+        currentLife -= damage;
+        if(currentLife < 0) currentLife = 0;
+        currentLifeDisplay.innerText = currentLife;
+        // Change background color to crimson if current life is at or below bloodied threshold
+        if(currentLife <= bloodied){
+            document.getElementById("currentLifeSection").style.backgroundColor = "crimson";
+        } else {
+            document.getElementById("currentLifeSection").style.backgroundColor = "";
+        }
+        damageInput.value = "";
+    }
+    
+    applyButton.addEventListener("click", applyDamage);
+    damageInput.addEventListener("keydown", function(e) {
+        if(e.key === "Enter"){
+            applyDamage();
+            e.preventDefault();
+        }
+    });
+})();
+</script>
