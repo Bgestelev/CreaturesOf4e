@@ -1,0 +1,317 @@
+
+<style>
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&family=Cinzel+Decorative:wght@700&family=Marcellus+SC&display=swap');
+
+    /* Overall container: subtle border, minimal lines */
+    .monster-block {
+        max-width: 600px;
+        margin: 0px auto;
+        font-family: 'Source Sans Pro', sans-serif;
+        background: #CDCBB5;
+        border: 1px solid #e2d4b7; /* Very light border */
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    /* TOP BAR (Name, subtypes, level, XP) */
+    .monster-top {
+        color: #fff;
+        background: #4E5C2E;
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .monster-top-left {
+        display: flex;
+        flex-direction: column;
+    }
+    .monster-name {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 2px;
+    }
+    .monster-subtypes {
+        font-size: 14px;
+        font-style: italic;
+        margin-left: 1px;
+    }
+    .monster-top-right {
+        text-align: right;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    /* SECOND BAR (HP, AC, etc.) */
+    .monster-mid {
+        background: #E8E6D4;
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .monster-mid-left,
+    .monster-mid-right {
+        font-size: 14px;
+        line-height: 1.4em;
+        width: 49%;
+    }
+    .monster-mid-left .bold,
+    .monster-mid-right .bold {
+        font-weight: bold;
+    }
+    .monster-mid-left > div,
+    .monster-mid-right > div {
+        margin-bottom: 6px;
+    }
+
+    /* Section Title Bars (e.g., TRAITS, STANDARD ACTIONS) */
+    .section-title {
+        background: #70774F; /* Dark olive heading bar */
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        font-size: 14px;
+        margin-top: 10px;  /* Spacing above heading */
+        margin-bottom: 0; /* No thick line under heading */
+    }
+
+    /* Section content uses padding/margin, no lines */
+    .section-content {
+        background: #E8E6D4;
+        padding: 8px;
+        margin-bottom: 8px; /* Spacing after content block */
+    }
+
+    /* Collapsible details for traits/actions (no thick lines) */
+    details {
+        background: #fff;
+        margin: 6px 0;
+        padding: 6px 8px;
+        border-left: 4px solid #4b5320; /* Simple left bar */
+    }
+    details summary {
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    /* Tinted backgrounds for usage types */
+    .usage-at-will { background-color: #90d390bf; }
+    .usage-recharge { background-color: #e4e473db; }
+    .usage-encounter { background-color: #ae1a328c; }
+
+    .bold {
+        font-weight: 700;
+    }
+
+    /* Attribute, skills, languages, etc. */
+    .attribute-section {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 6px;
+    }
+    .paired-stat {
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+        margin-bottom: 4px;
+    }
+
+    /* Damage application controls */
+    #applyDamageButton {
+        border-radius: 3px;
+        background-color: #4b5320;
+        color: #fff;
+        border: none;
+        padding: 3px 6px;
+        cursor: pointer;
+        font-size: 13px;
+        margin-left: 6px;
+    }
+    #damageInput {
+        width: 60px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        padding: 3px;
+        font-size: 13px;
+        margin-left: 5px;
+    }
+</style>
+
+<div class="monster-block">
+    <!-- TOP BAR -->
+    <div class="monster-top">
+        <div class="monster-top-left">
+            <div class="monster-name">Goblin Blackblade</div>
+            <div class="monster-subtypes">Small natural humanoid, Goblin</div>
+        </div>
+        <div class="monster-top-right">
+            <div>Level 1 lurker / standard</div>
+            <div>XP: 100</div>
+        </div>
+    </div>
+
+    <!-- SECOND BAR (HP, AC, defenses, etc.) -->
+    <div class="monster-mid">
+        <div class="monster-mid-left">
+            <div>
+                <span class="bold">HP</span> 25;
+                <span class="bold">Bloodied</span> 12;
+            </div>
+            <div>
+                <span class="bold">AC</span> 16,
+                <span class="bold">Fortitude</span> 12,
+                <span class="bold">Reflex</span> 14,
+                <span class="bold">Will</span> 11
+            </div>
+            <div>
+                <span class="bold">Speed</span> 6
+            </div>
+            <!-- Current Health & Damage Taken -->
+            <div>
+                <span class="bold">Current Health:</span>
+                <span id="currentLifeDisplay">25</span>
+                <input type="number" id="damageInput" placeholder="0" />
+                <button id="applyDamageButton">Apply</button>
+            </div>
+        </div>
+        <div class="monster-mid-right">
+            <div>
+                <span class="bold">Initiative</span> +7
+            </div>
+            <div>
+                <span class="bold">Senses</span> Normal Vision, Low-light Vision
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- RESIST, VULN, IMMUNE -->
+    <div class="section-content" style="margin-top: 8px;">
+        <span class="bold">Resistances:</span>  |
+        <span class="bold">Vulnerabilities:</span>  |
+        <span class="bold">Immunities:</span> 
+    </div>
+
+    <!-- TRAITS -->
+    
+    <div class="section-title">Traits</div>
+    <div class="section-content">
+        
+        <details>
+            <summary>Combat Advantage</summary>
+            <div>The goblin blackblade deals an extra 1d6 damage against any target it has combat advantage against.</div>
+        </details>
+        
+        <details>
+            <summary>Sneaky</summary>
+            <div>When shifting, a goblin blackblade can move into a space occupied by an ally of its level or lower. The ally shifts into the blackblade's previous space as a free action.</div>
+        </details>
+        
+    </div>
+    
+
+    <!-- ACTIONS -->
+    
+    <div class="section-title">Standard Actions</div>
+    <div class="section-content">
+        
+            
+            
+                
+            
+            <details class="usage-at-will">
+                <summary><span class="bold">Short Sword</span> (at-will)</summary>
+                <div>Basic Attack At-Will ✦ Weapon Standard +5 vs AC;<br>1d6+2 damage.</div>
+            </details>
+        
+            
+            
+                
+            
+            <details class="usage-at-will">
+                <summary><span class="bold">Goblin Tactics</span> (at-will)</summary>
+                <div>At-Will Immediate Reaction Trigger:<br>When missed by a melee attack The goblin shifts 1 square.</div>
+            </details>
+        
+    </div>
+    
+
+    <!-- SKILLS & ABILITIES -->
+    <div class="section-title">Skills & Abilities</div>
+    <div class="section-content">
+        <div><span class="bold">Skills:</span> Perception +1, Stealth +10, Thievery +10</div>
+        <div class="attribute-section">
+            <div class="paired-stat">
+                <div><span class="bold">Str</span> 14 (+2)</div>
+                <div><span class="bold">Con</span> 13 (+1)</div>
+            </div>
+            <div class="paired-stat">
+                <div><span class="bold">Dex</span> 17 (+3)</div>
+                <div><span class="bold">Int</span> 8 (-1)</div>
+            </div>
+            <div class="paired-stat">
+                <div><span class="bold">Wis</span> 12 (+1)</div>
+                <div><span class="bold">Cha</span> 8 (-1)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LANGUAGES & OTHER -->
+    <div class="section-title">Languages & Other</div>
+    <div class="section-content">
+        <div>
+            <span class="bold">Languages:</span>  (written),
+            Common, Goblin (spoken)
+        </div>
+        
+        <div style="margin-top: 6px;">
+            <span class="bold">Equipment:</span> leather armor , short sword .
+        </div>
+        
+        <div style="margin-top: 6px;">
+            <span class="bold">Alignment:</span> Evil
+        </div>
+    </div>
+</div>
+
+<script>
+(function(){
+    var currentLifeDisplay = document.getElementById("currentLifeDisplay");
+    var damageInput = document.getElementById("damageInput");
+    var applyButton = document.getElementById("applyDamageButton");
+    // Initialize current life to full HP
+    var currentLife = parseInt(currentLifeDisplay.innerText) || 0;
+    var bloodied = parseInt("12") || 0;
+    
+    function applyDamage(){
+        var damage = parseInt(damageInput.value) || 0;
+        currentLife -= damage;
+        if(currentLife < 0) currentLife = 0;
+        currentLifeDisplay.innerText = currentLife;
+
+        /* If current life <= bloodied, make the text bold & crimson.
+           Otherwise, revert to normal. */
+        if(currentLife <= bloodied){
+            currentLifeDisplay.style.color = "crimson";
+            currentLifeDisplay.style.fontWeight = "bold";
+        } else {
+            currentLifeDisplay.style.color = "";
+            currentLifeDisplay.style.fontWeight = "";
+        }
+
+        damageInput.value = "";
+    }
+    
+    applyButton.addEventListener("click", applyDamage);
+    damageInput.addEventListener("keydown", function(e) {
+        if(e.key === "Enter"){
+            applyDamage();
+            e.preventDefault();
+        }
+    });
+})();
+</script>
