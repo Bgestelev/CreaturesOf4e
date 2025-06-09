@@ -145,12 +145,12 @@
     <!-- TOP BAR -->
     <div class="monster-top">
         <div class="monster-top-left">
-            <div class="monster-name">Beholder Eye of Flame</div>
-            <div class="monster-subtypes">Large aberrant magical</div>
+            <div class="monster-name">Kobold Slink</div>
+            <div class="monster-subtypes">Small natural humanoid, Reptile</div>
         </div>
         <div class="monster-top-right">
-            <div>Level 13 artillery / elite</div>
-            <div>XP: 1600</div>
+            <div>Level 1 lurker / standard</div>
+            <div>XP: 100</div>
         </div>
     </div>
 
@@ -158,36 +158,32 @@
     <div class="monster-mid">
         <div class="monster-mid-left">
             <div>
-                <span class="bold">HP</span> 204;
-                <span class="bold">Bloodied</span> 102;
+                <span class="bold">HP</span> 24;
+                <span class="bold">Bloodied</span> 12;
             </div>
             <div>
-                <span class="bold">AC</span> 26,
-                <span class="bold">Fortitude</span> 26,
-                <span class="bold">Reflex</span> 27,
-                <span class="bold">Will</span> 28
+                <span class="bold">AC</span> 15,
+                <span class="bold">Fortitude</span> 12,
+                <span class="bold">Reflex</span> 14,
+                <span class="bold">Will</span> 13
             </div>
             <div>
-                <span class="bold">Speed</span> 6, fly 6 (hover)
+                <span class="bold">Speed</span> 6
             </div>
             <!-- Current Health & Damage Taken -->
             <div>
                 <span class="bold">Current Health:</span>
-                <span id="currentLifeDisplay">204</span>
+                <span id="currentLifeDisplay">24</span>
                 <input type="number" id="damageInput" placeholder="0" />
                 <button id="applyDamageButton">Apply</button>
             </div>
         </div>
         <div class="monster-mid-right">
             <div>
-                <span class="bold">Initiative</span> +11
+                <span class="bold">Initiative</span> +7
             </div>
             <div>
-                <span class="bold">Senses</span> Normal Vision, All-around Vision, Darkvision
-            </div>
-            
-            <div>
-                <span class="bold">Action Points:</span> 1
+                <span class="bold">Senses</span> Normal Vision, Darkvision
             </div>
             
         </div>
@@ -206,8 +202,13 @@
     <div class="section-content">
         
         <details>
-            <summary>Eyes of the Beholder</summary>
-            <div>Aura 5 At the start of each enemy's turn, if that creature is within the aura and in the eye of flame's line of sight, the eye of flame uses one random eye ray power against that creature.</div>
+            <summary>Combat Advantage</summary>
+            <div>The kobold slink deals an extra 1d6 damage on melee and ranged attacks against any target it has combat advantage against.</div>
+        </details>
+        
+        <details>
+            <summary>Slink's Boon</summary>
+            <div>An enemy cannot target the kobold slink with a melee or ranged attack unless the kobold slink is the nearest enemy.</div>
         </details>
         
     </div>
@@ -223,8 +224,8 @@
                 
             
             <details class="usage-at-will">
-                <summary><span class="bold">Bite</span> (at-will)</summary>
-                <div>Basic Attack At-Will Standard +18 vs AC;<br>2d6 damage.</div>
+                <summary><span class="bold">Spear</span> (at-will)</summary>
+                <div>Basic Attack At-Will ✦ Weapon Standard +6 vs AC;<br>1d8 damage.</div>
             </details>
         
             
@@ -232,24 +233,8 @@
                 
             
             <details class="usage-at-will">
-                <summary><span class="bold">Central Eye</span> (at-will)</summary>
-                <div>At-Will Minor, At-Will Ranged 8 The target gains vulnerable 10 fire, and any attack that deals fire damage to the target also deals ongoing 5 fire damage (save ends both).</div>
-            </details>
-        
-            
-            
-                
-            
-            <details class="usage-at-will">
-                <summary><span class="bold">Eye Rays</span> (at-will)</summary>
-                <div>At-Will Standard, At-Will The eye of flame can use up to two eye ray powers (chosen from the list below), at least one of which must be a fire ray. Each power must target a different creature. Using eye rays does not provoke opportunity attacks. 1-Fire Ray (Fire):<br>range 8;<br>+17 vs. Reflex;<br>2d8 + 6 fire damage. 2-Telekinesis Ray:<br>range 8;<br>+17 vs. Fortitude;<br>the target slides 4 squares. 3-Fear Ray (Fear):<br>range 8;<br>+17 vs. Will;<br>the target moves its speed away from the eye of flame by the safest route possible and takes a -2 penalty to attack rolls (save ends)</div>
-            </details>
-        
-            
-            
-            <details class="">
-                <summary><span class="bold">Fiery Burst</span> (other)</summary>
-                <div>Fire Close burst 2 Trigger:<br>When first bloodied and again when the eye of flame is reduced to 0 hit points, +17 vs Reflex;<br>2d8+6 fire damage.</div>
+                <summary><span class="bold">Shift and Slide</span> (at-will)</summary>
+                <div>At-Will Minor The kobold slink shifts 1 square. It can shift into an ally's space, and the ally slides into the kobold slink's original space as a free action.</div>
             </details>
         
     </div>
@@ -258,19 +243,19 @@
     <!-- SKILLS & ABILITIES -->
     <div class="section-title">Skills & Abilities</div>
     <div class="section-content">
-        <div><span class="bold">Skills:</span> Perception +15</div>
+        <div><span class="bold">Skills:</span> Acrobatics +7, Stealth +9, Thievery +9</div>
         <div class="attribute-section">
             <div class="paired-stat">
-                <div><span class="bold">Str</span> 10 (+6)</div>
-                <div><span class="bold">Con</span> 18 (+10)</div>
+                <div><span class="bold">Str</span> 8 (-1)</div>
+                <div><span class="bold">Con</span> 12 (+1)</div>
             </div>
             <div class="paired-stat">
-                <div><span class="bold">Dex</span> 20 (+11)</div>
-                <div><span class="bold">Int</span> 14 (+8)</div>
+                <div><span class="bold">Dex</span> 16 (+3)</div>
+                <div><span class="bold">Int</span> 6 (-2)</div>
             </div>
             <div class="paired-stat">
-                <div><span class="bold">Wis</span> 19 (+10)</div>
-                <div><span class="bold">Cha</span> 23 (+12)</div>
+                <div><span class="bold">Wis</span> 10 (+0)</div>
+                <div><span class="bold">Cha</span> 15 (+2)</div>
             </div>
         </div>
     </div>
@@ -280,7 +265,11 @@
     <div class="section-content">
         <div>
             <span class="bold">Languages:</span>  (written),
-            DeepSpeech (spoken)
+            Common, Draconic (spoken)
+        </div>
+        
+        <div style="margin-top: 6px;">
+            <span class="bold">Equipment:</span> hide armor , spear .
         </div>
         
         <div style="margin-top: 6px;">
@@ -296,7 +285,7 @@
     var applyButton = document.getElementById("applyDamageButton");
     // Initialize current life to full HP
     var currentLife = parseInt(currentLifeDisplay.innerText) || 0;
-    var bloodied = parseInt("102") || 0;
+    var bloodied = parseInt("12") || 0;
     
     function applyDamage(){
         var damage = parseInt(damageInput.value) || 0;

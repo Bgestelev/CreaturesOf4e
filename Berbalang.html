@@ -1,92 +1,209 @@
 
 <style>
-    .statblock { 
-        max-width: 500px; 
-        background: #fff; 
-        font-family: Arial, sans-serif;
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&family=Cinzel+Decorative:wght@700&family=Marcellus+SC&display=swap');
+
+    /* Overall container: subtle border, minimal lines */
+    .monster-block {
+        max-width: 600px;
+        margin: 0px auto;
+        font-family: 'Source Sans Pro', sans-serif;
+        background: #CDCBB5;
+        border: 1px solid #e2d4b7; /* Very light border */
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
     }
-    .header { 
-        background: #4b5320; 
-        color: white; 
-        padding: 10px; 
-        font-size: 20px; 
-        font-weight: bold; 
+
+    /* TOP BAR (Name, subtypes, level, XP) */
+    .monster-top {
+        color: #fff;
+        background: #4E5C2E;
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
     }
-    .subheader { 
-        background: #c8b68e; 
-        padding: 5px; 
-        font-size: 14px; 
-        font-style: italic; 
+    .monster-top-left {
+        display: flex;
+        flex-direction: column;
     }
-    /* Remove borders and alternate background colors for sections */
-    .statblock > .section {
-        padding: 10px;
-        border: none;
+    .monster-name {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 2px;
     }
-    /* Reverse the alternating order: odd sections get #e8ddc3, even sections get #c8b68e */
-    .statblock > .section:nth-of-type(odd) {
-        background: #e8ddc3;
+    .monster-subtypes {
+        font-size: 14px;
+        font-style: italic;
+        margin-left: 1px;
     }
-    .statblock > .section:nth-of-type(even) {
-        background: #c8b68e;
+    .monster-top-right {
+        text-align: right;
+        font-size: 14px;
+        margin-left: 10px;
     }
-    details { 
-        margin-top: 5px;
-        margin-bottom: 5px;
-        padding: 5px;
-        border-left: 4px solid #4b5320;
+
+    /* SECOND BAR (HP, AC, etc.) */
+    .monster-mid {
+        background: #E8E6D4;
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .monster-mid-left,
+    .monster-mid-right {
+        font-size: 14px;
+        line-height: 1.4em;
+        width: 49%;
+    }
+    .monster-mid-left .bold,
+    .monster-mid-right .bold {
+        font-weight: bold;
+    }
+    .monster-mid-left > div,
+    .monster-mid-right > div {
+        margin-bottom: 6px;
+    }
+
+    /* Section Title Bars (e.g., TRAITS, STANDARD ACTIONS) */
+    .section-title {
+        background: #70774F; /* Dark olive heading bar */
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        font-size: 14px;
+        margin-top: 10px;  /* Spacing above heading */
+        margin-bottom: 0; /* No thick line under heading */
+    }
+
+    /* Section content uses padding/margin, no lines */
+    .section-content {
+        background: #E8E6D4;
+        padding: 8px;
+        margin-bottom: 8px; /* Spacing after content block */
+    }
+
+    /* Collapsible details for traits/actions (no thick lines) */
+    details {
+        background: #fff;
+        margin: 6px 0;
+        padding: 6px 8px;
+        border-left: 4px solid #4b5320; /* Simple left bar */
     }
     details summary {
         cursor: pointer;
         font-weight: bold;
     }
-    .bold { 
-        font-weight: bold; 
+
+    /* Tinted backgrounds for usage types */
+    .usage-at-will { background-color: #90d390bf; }
+    .usage-recharge { background-color: #e4e473db; }
+    .usage-encounter { background-color: #ae1a328c; }
+
+    .bold {
+        font-weight: 700;
+    }
+
+    /* Attribute, skills, languages, etc. */
+    .attribute-section {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 6px;
     }
     .paired-stat {
         display: flex;
         flex-direction: column;
+        margin-right: 10px;
+        margin-bottom: 4px;
     }
-    /* New attribute section style: display as a row */
-    .attribute-section {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+
+    /* Damage application controls */
+    #applyDamageButton {
+        border-radius: 3px;
+        background-color: #4b5320;
+        color: #fff;
+        border: none;
+        padding: 3px 6px;
+        cursor: pointer;
+        font-size: 13px;
+        margin-left: 6px;
+    }
+    #damageInput {
+        width: 60px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        padding: 3px;
+        font-size: 13px;
+        margin-left: 5px;
     }
 </style>
-<div class="statblock">
-    <div class="header">Berbalang - Level 10 skirmisher / solo</div>
-    <div class="subheader">
-        <span style="float: left;">Medium immortal humanoid | Evil</span>
-        <span style="float: right;">XP: 2500</span>
-        <div style="clear: both;"></div>
+
+<div class="monster-block">
+    <!-- TOP BAR -->
+    <div class="monster-top">
+        <div class="monster-top-left">
+            <div class="monster-name">Berbalang</div>
+            <div class="monster-subtypes">Medium immortal humanoid</div>
+        </div>
+        <div class="monster-top-right">
+            <div>Level 10 skirmisher / solo</div>
+            <div>XP: 2500</div>
+        </div>
     </div>
-    <div class="section">
-        <span class="bold">Initiative:</span> +13 | <span class="bold">Senses:</span> Normal Vision
+
+    <!-- SECOND BAR (HP, AC, defenses, etc.) -->
+    <div class="monster-mid">
+        <div class="monster-mid-left">
+            <div>
+                <span class="bold">HP</span> 408;
+                <span class="bold">Bloodied</span> 204;
+            </div>
+            <div>
+                <span class="bold">AC</span> 25,
+                <span class="bold">Fortitude</span> 22,
+                <span class="bold">Reflex</span> 25,
+                <span class="bold">Will</span> 21
+            </div>
+            <div>
+                <span class="bold">Speed</span> 6, fly 8
+            </div>
+            <!-- Current Health & Damage Taken -->
+            <div>
+                <span class="bold">Current Health:</span>
+                <span id="currentLifeDisplay">408</span>
+                <input type="number" id="damageInput" placeholder="0" />
+                <button id="applyDamageButton">Apply</button>
+            </div>
+        </div>
+        <div class="monster-mid-right">
+            <div>
+                <span class="bold">Initiative</span> +13
+            </div>
+            <div>
+                <span class="bold">Senses</span> Normal Vision
+            </div>
+            
+            <div>
+                <span class="bold">Action Points:</span> 2
+            </div>
+            
+        </div>
     </div>
-    <div class="section">
-        <span class="bold">HP:</span> 408 | <span class="bold">Bloodied:</span> 204
-    </div>
-    <div class="section">
-        <span class="bold">AC:</span> 25, <span class="bold">Fort:</span> 22, <span class="bold">Ref:</span> 25, <span class="bold">Will:</span> 21
-    </div>
-    <div class="section">
-        <span class="bold">Speed:</span> 6, fly 8
-    </div>
-    
-    <div class="section">
-        <span class="bold">Action Points:</span> 2
-    </div>
-    
-    <div class="section">
-        <span class="bold">Resistances:</span>  | 
-        <span class="bold">Vulnerabilities:</span>  | 
+
+    <!-- RESIST, VULN, IMMUNE -->
+    <div class="section-content" style="margin-top: 8px;">
+        <span class="bold">Resistances:</span>  |
+        <span class="bold">Vulnerabilities:</span>  |
         <span class="bold">Immunities:</span> 
     </div>
+
+    <!-- TRAITS -->
     
-    
-    <div class="section">
-        <strong>Traits:</strong>
+    <div class="section-title">Traits</div>
+    <div class="section-content">
         
         <details>
             <summary>Berbalang Sneak Attack</summary>
@@ -95,68 +212,126 @@
         
     </div>
     
+
+    <!-- ACTIONS -->
     
-    
-    <div class="section">
-        <strong>Actions:</strong>
+    <div class="section-title">Standard Actions</div>
+    <div class="section-content">
         
             
-            <details style="background-color: #90d390bf;">
             
+                
+            
+            <details class="usage-at-will">
                 <summary><span class="bold">Claw</span> (at-will)</summary>
                 <div>Basic Attack At-Will Standard +14 vs AC;<br>1d8+6 damage.</div>
             </details>
         
             
-            <details style="background-color: #90d390bf;">
             
+                
+            
+            <details class="usage-at-will">
                 <summary><span class="bold">Sacrifice</span> (at-will)</summary>
                 <div>At-Will ✦ Psychic Standard Area burst 1 centered on a duplicate +11 vs Fortitude;<br>2d8+6 psychic damage, plus the target is dazed (save ends). Miss:<br>No damage, but the target is dazed (save ends). Hit or Miss:<br>The berbalang takes 25 damage.</div>
             </details>
         
             
-            <details style="background-color: #90d390bf;">
             
+                
+            
+            <details class="usage-at-will">
                 <summary><span class="bold">Summon Duplicate</span> (at-will)</summary>
                 <div>At-Will ✦ Conjuration, Psychic Minor The berbalang manifests an exact duplicate of itself in an unoccupied adjacent square. It can have no more than four duplicates at once, and duplicates cannot summon other duplicates. When a duplicate appears, it makes an initiative check and joins the battle on that initiative count. All damage a duplicate deals is treated as psychic damage. A duplicate has the same statistics as the berbalang except for its hit points. When the berbalang manifests a duplicate, the berbalang loses one-quarter of its current hit points and the duplicate appears with that quantity of hit points. The berbalang's maximum number of hit points remains the same. Duplicates last until the berbalang reaches 0 hit points, absorbs them, or uses sacrifice. A duplicate must stay within 10 squares of the berbalang at all times or it disappears.</div>
             </details>
         
             
-            <details>
             
+            <details class="">
                 <summary><span class="bold">Absorb Duplicate</span> (other)</summary>
                 <div>Healing Standard The berbalang absorbs a duplicate adjacent to it and regains 50 hit points</div>
             </details>
         
             
-            <details style="background-color: #90d390bf;">
             
+                
+            
+            <details class="usage-at-will">
                 <summary><span class="bold">Psychic Deflection</span> (at-will)</summary>
                 <div>At-Will ✦ Psychic Immediate Reaction Trigger:<br>When the berbalang is hit by an attack The berbalang can deflect the damage it takes from an attack to one of its duplicates. Any effects or secondary attacks included in the attack are also deflected to the duplicate. The damage a duplicate takes in this way is considered psychic damage.</div>
             </details>
         
     </div>
     
-    
-    <div class="section">
-        <span class="bold">Languages:</span>  (written), Supernal (spoken)
-    </div>
-    <div class="section">
-        <span class="bold">Skills:</span> Perception +6
-    </div>
-    <div class="section attribute-section">
-        <div class="paired-stat">
-            <div><span class="bold">Str</span> 16 (+8)</div>
-            <div><span class="bold">Con</span> 14 (+7)</div>
+
+    <!-- SKILLS & ABILITIES -->
+    <div class="section-title">Skills & Abilities</div>
+    <div class="section-content">
+        <div><span class="bold">Skills:</span> Perception +6</div>
+        <div class="attribute-section">
+            <div class="paired-stat">
+                <div><span class="bold">Str</span> 16 (+8)</div>
+                <div><span class="bold">Con</span> 14 (+7)</div>
+            </div>
+            <div class="paired-stat">
+                <div><span class="bold">Dex</span> 22 (+11)</div>
+                <div><span class="bold">Int</span> 14 (+7)</div>
+            </div>
+            <div class="paired-stat">
+                <div><span class="bold">Wis</span> 13 (+6)</div>
+                <div><span class="bold">Cha</span> 15 (+7)</div>
+            </div>
         </div>
-        <div class="paired-stat">
-            <div><span class="bold">Dex</span> 22 (+11)</div>
-            <div><span class="bold">Int</span> 14 (+7)</div>
+    </div>
+
+    <!-- LANGUAGES & OTHER -->
+    <div class="section-title">Languages & Other</div>
+    <div class="section-content">
+        <div>
+            <span class="bold">Languages:</span>  (written),
+            Supernal (spoken)
         </div>
-        <div class="paired-stat">
-            <div><span class="bold">Wis</span> 13 (+6)</div>
-            <div><span class="bold">Cha</span> 15 (+7)</div>
+        
+        <div style="margin-top: 6px;">
+            <span class="bold">Alignment:</span> Evil
         </div>
     </div>
-    
 </div>
+
+<script>
+(function(){
+    var currentLifeDisplay = document.getElementById("currentLifeDisplay");
+    var damageInput = document.getElementById("damageInput");
+    var applyButton = document.getElementById("applyDamageButton");
+    // Initialize current life to full HP
+    var currentLife = parseInt(currentLifeDisplay.innerText) || 0;
+    var bloodied = parseInt("204") || 0;
+    
+    function applyDamage(){
+        var damage = parseInt(damageInput.value) || 0;
+        currentLife -= damage;
+        if(currentLife < 0) currentLife = 0;
+        currentLifeDisplay.innerText = currentLife;
+
+        /* If current life <= bloodied, make the text bold & crimson.
+           Otherwise, revert to normal. */
+        if(currentLife <= bloodied){
+            currentLifeDisplay.style.color = "crimson";
+            currentLifeDisplay.style.fontWeight = "bold";
+        } else {
+            currentLifeDisplay.style.color = "";
+            currentLifeDisplay.style.fontWeight = "";
+        }
+
+        damageInput.value = "";
+    }
+    
+    applyButton.addEventListener("click", applyDamage);
+    damageInput.addEventListener("keydown", function(e) {
+        if(e.key === "Enter"){
+            applyDamage();
+            e.preventDefault();
+        }
+    });
+})();
+</script>

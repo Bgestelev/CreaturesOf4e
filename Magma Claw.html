@@ -145,12 +145,12 @@
     <!-- TOP BAR -->
     <div class="monster-top">
         <div class="monster-top-left">
-            <div class="monster-name">Beholder Eye of Flame</div>
-            <div class="monster-subtypes">Large aberrant magical</div>
+            <div class="monster-name">Magma Claw</div>
+            <div class="monster-subtypes">Medium elemental magical, Earth, fire</div>
         </div>
         <div class="monster-top-right">
-            <div>Level 13 artillery / elite</div>
-            <div>XP: 1600</div>
+            <div>Level 4 brute / standard</div>
+            <div>XP: 175</div>
         </div>
     </div>
 
@@ -158,36 +158,32 @@
     <div class="monster-mid">
         <div class="monster-mid-left">
             <div>
-                <span class="bold">HP</span> 204;
-                <span class="bold">Bloodied</span> 102;
+                <span class="bold">HP</span> 64;
+                <span class="bold">Bloodied</span> 32;
             </div>
             <div>
-                <span class="bold">AC</span> 26,
-                <span class="bold">Fortitude</span> 26,
-                <span class="bold">Reflex</span> 27,
-                <span class="bold">Will</span> 28
+                <span class="bold">AC</span> 16,
+                <span class="bold">Fortitude</span> 16,
+                <span class="bold">Reflex</span> 14,
+                <span class="bold">Will</span> 13
             </div>
             <div>
-                <span class="bold">Speed</span> 6, fly 6 (hover)
+                <span class="bold">Speed</span> 4, (8 while charging)
             </div>
             <!-- Current Health & Damage Taken -->
             <div>
                 <span class="bold">Current Health:</span>
-                <span id="currentLifeDisplay">204</span>
+                <span id="currentLifeDisplay">64</span>
                 <input type="number" id="damageInput" placeholder="0" />
                 <button id="applyDamageButton">Apply</button>
             </div>
         </div>
         <div class="monster-mid-right">
             <div>
-                <span class="bold">Initiative</span> +11
+                <span class="bold">Initiative</span> +3
             </div>
             <div>
-                <span class="bold">Senses</span> Normal Vision, All-around Vision, Darkvision
-            </div>
-            
-            <div>
-                <span class="bold">Action Points:</span> 1
+                <span class="bold">Senses</span> Normal Vision
             </div>
             
         </div>
@@ -195,22 +191,12 @@
 
     <!-- RESIST, VULN, IMMUNE -->
     <div class="section-content" style="margin-top: 8px;">
-        <span class="bold">Resistances:</span>  |
-        <span class="bold">Vulnerabilities:</span>  |
-        <span class="bold">Immunities:</span> 
+        <span class="bold">Resistances:</span> 10 fire |
+        <span class="bold">Vulnerabilities:</span> cold (a magma claw that takes cold damage is slowed until the end of its next turn) |
+        <span class="bold">Immunities:</span> petrification
     </div>
 
     <!-- TRAITS -->
-    
-    <div class="section-title">Traits</div>
-    <div class="section-content">
-        
-        <details>
-            <summary>Eyes of the Beholder</summary>
-            <div>Aura 5 At the start of each enemy's turn, if that creature is within the aura and in the eye of flame's line of sight, the eye of flame uses one random eye ray power against that creature.</div>
-        </details>
-        
-    </div>
     
 
     <!-- ACTIONS -->
@@ -223,8 +209,8 @@
                 
             
             <details class="usage-at-will">
-                <summary><span class="bold">Bite</span> (at-will)</summary>
-                <div>Basic Attack At-Will Standard +18 vs AC;<br>2d6 damage.</div>
+                <summary><span class="bold">Claw</span> (at-will)</summary>
+                <div>Basic Attack At-Will ✦ Fire Standard +7 vs AC;<br>1d6+4 damage plus 1d6 fire damage.</div>
             </details>
         
             
@@ -232,24 +218,8 @@
                 
             
             <details class="usage-at-will">
-                <summary><span class="bold">Central Eye</span> (at-will)</summary>
-                <div>At-Will Minor, At-Will Ranged 8 The target gains vulnerable 10 fire, and any attack that deals fire damage to the target also deals ongoing 5 fire damage (save ends both).</div>
-            </details>
-        
-            
-            
-                
-            
-            <details class="usage-at-will">
-                <summary><span class="bold">Eye Rays</span> (at-will)</summary>
-                <div>At-Will Standard, At-Will The eye of flame can use up to two eye ray powers (chosen from the list below), at least one of which must be a fire ray. Each power must target a different creature. Using eye rays does not provoke opportunity attacks. 1-Fire Ray (Fire):<br>range 8;<br>+17 vs. Reflex;<br>2d8 + 6 fire damage. 2-Telekinesis Ray:<br>range 8;<br>+17 vs. Fortitude;<br>the target slides 4 squares. 3-Fear Ray (Fear):<br>range 8;<br>+17 vs. Will;<br>the target moves its speed away from the eye of flame by the safest route possible and takes a -2 penalty to attack rolls (save ends)</div>
-            </details>
-        
-            
-            
-            <details class="">
-                <summary><span class="bold">Fiery Burst</span> (other)</summary>
-                <div>Fire Close burst 2 Trigger:<br>When first bloodied and again when the eye of flame is reduced to 0 hit points, +17 vs Reflex;<br>2d8+6 fire damage.</div>
+                <summary><span class="bold">Spew Lava</span> (at-will)</summary>
+                <div>At-Will ✦ Fire Standard +5 vs Reflex;<br>the target takes ongoing 5 fire damage and is immobilized (save ends both).</div>
             </details>
         
     </div>
@@ -258,19 +228,19 @@
     <!-- SKILLS & ABILITIES -->
     <div class="section-title">Skills & Abilities</div>
     <div class="section-content">
-        <div><span class="bold">Skills:</span> Perception +15</div>
+        <div><span class="bold">Skills:</span> Endurance +9, Perception +7, Stealth +8</div>
         <div class="attribute-section">
             <div class="paired-stat">
-                <div><span class="bold">Str</span> 10 (+6)</div>
-                <div><span class="bold">Con</span> 18 (+10)</div>
+                <div><span class="bold">Str</span> 18 (+6)</div>
+                <div><span class="bold">Con</span> 14 (+4)</div>
             </div>
             <div class="paired-stat">
-                <div><span class="bold">Dex</span> 20 (+11)</div>
-                <div><span class="bold">Int</span> 14 (+8)</div>
+                <div><span class="bold">Dex</span> 12 (+3)</div>
+                <div><span class="bold">Int</span> 2 (-2)</div>
             </div>
             <div class="paired-stat">
-                <div><span class="bold">Wis</span> 19 (+10)</div>
-                <div><span class="bold">Cha</span> 23 (+12)</div>
+                <div><span class="bold">Wis</span> 11 (+2)</div>
+                <div><span class="bold">Cha</span> 6 (+0)</div>
             </div>
         </div>
     </div>
@@ -280,11 +250,11 @@
     <div class="section-content">
         <div>
             <span class="bold">Languages:</span>  (written),
-            DeepSpeech (spoken)
+            Primordial (spoken)
         </div>
         
         <div style="margin-top: 6px;">
-            <span class="bold">Alignment:</span> Evil
+            <span class="bold">Alignment:</span> Unaligned
         </div>
     </div>
 </div>
@@ -296,7 +266,7 @@
     var applyButton = document.getElementById("applyDamageButton");
     // Initialize current life to full HP
     var currentLife = parseInt(currentLifeDisplay.innerText) || 0;
-    var bloodied = parseInt("102") || 0;
+    var bloodied = parseInt("32") || 0;
     
     function applyDamage(){
         var damage = parseInt(damageInput.value) || 0;

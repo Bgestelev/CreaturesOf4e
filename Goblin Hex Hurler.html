@@ -145,12 +145,12 @@
     <!-- TOP BAR -->
     <div class="monster-top">
         <div class="monster-top-left">
-            <div class="monster-name">Beholder Eye of Flame</div>
-            <div class="monster-subtypes">Large aberrant magical</div>
+            <div class="monster-name">Goblin Hex Hurler</div>
+            <div class="monster-subtypes">Small natural humanoid</div>
         </div>
         <div class="monster-top-right">
-            <div>Level 13 artillery / elite</div>
-            <div>XP: 1600</div>
+            <div>Level 3 controller / standard leader</div>
+            <div>XP: 150</div>
         </div>
     </div>
 
@@ -158,36 +158,32 @@
     <div class="monster-mid">
         <div class="monster-mid-left">
             <div>
-                <span class="bold">HP</span> 204;
-                <span class="bold">Bloodied</span> 102;
+                <span class="bold">HP</span> 46;
+                <span class="bold">Bloodied</span> 23;
             </div>
             <div>
-                <span class="bold">AC</span> 26,
-                <span class="bold">Fortitude</span> 26,
-                <span class="bold">Reflex</span> 27,
-                <span class="bold">Will</span> 28
+                <span class="bold">AC</span> 17,
+                <span class="bold">Fortitude</span> 14,
+                <span class="bold">Reflex</span> 15,
+                <span class="bold">Will</span> 16
             </div>
             <div>
-                <span class="bold">Speed</span> 6, fly 6 (hover)
+                <span class="bold">Speed</span> 6
             </div>
             <!-- Current Health & Damage Taken -->
             <div>
                 <span class="bold">Current Health:</span>
-                <span id="currentLifeDisplay">204</span>
+                <span id="currentLifeDisplay">46</span>
                 <input type="number" id="damageInput" placeholder="0" />
                 <button id="applyDamageButton">Apply</button>
             </div>
         </div>
         <div class="monster-mid-right">
             <div>
-                <span class="bold">Initiative</span> +11
+                <span class="bold">Initiative</span> +3
             </div>
             <div>
-                <span class="bold">Senses</span> Normal Vision, All-around Vision, Darkvision
-            </div>
-            
-            <div>
-                <span class="bold">Action Points:</span> 1
+                <span class="bold">Senses</span> Normal Vision, Low-light Vision
             </div>
             
         </div>
@@ -202,16 +198,6 @@
 
     <!-- TRAITS -->
     
-    <div class="section-title">Traits</div>
-    <div class="section-content">
-        
-        <details>
-            <summary>Eyes of the Beholder</summary>
-            <div>Aura 5 At the start of each enemy's turn, if that creature is within the aura and in the eye of flame's line of sight, the eye of flame uses one random eye ray power against that creature.</div>
-        </details>
-        
-    </div>
-    
 
     <!-- ACTIONS -->
     
@@ -223,8 +209,8 @@
                 
             
             <details class="usage-at-will">
-                <summary><span class="bold">Bite</span> (at-will)</summary>
-                <div>Basic Attack At-Will Standard +18 vs AC;<br>2d6 damage.</div>
+                <summary><span class="bold">Staff</span> (at-will)</summary>
+                <div>Basic Attack At-Will ✦ weapon Standard Attack:<br>Melee 1 (one creature) +8 vs. AC Hit:<br>1d6 + 7 damage, and the goblin can slide the target 1 square.</div>
             </details>
         
             
@@ -232,8 +218,26 @@
                 
             
             <details class="usage-at-will">
-                <summary><span class="bold">Central Eye</span> (at-will)</summary>
-                <div>At-Will Minor, At-Will Ranged 8 The target gains vulnerable 10 fire, and any attack that deals fire damage to the target also deals ongoing 5 fire damage (save ends both).</div>
+                <summary><span class="bold">Blinding Hex</span> (at-will)</summary>
+                <div>At-Will Standard Attack:<br>Ranged 10 (one creature) +6 vs. Fortitude Hit:<br>2d6 + 1 damage, and the target is blinded until the end of the goblin's next turn.</div>
+            </details>
+        
+            
+            
+                
+            
+            <details class="usage-recharge">
+                <summary><span class="bold">Stinging Hex</span> (recharge)</summary>
+                <div>Recharge 5-6 Standard Attack:<br>Ranged 10 (one creature) +6 vs. Will Hit:<br>The target takes 3d6 + 1 damage if it moves during its turn (save ends).</div>
+            </details>
+        
+            
+            
+                
+            
+            <details class="usage-encounter">
+                <summary><span class="bold">Vexing Cloud</span> (encounter)</summary>
+                <div>Encounter ✦ zone Standard Effect:<br>Area burst 3 within 10. The burst creates a zone that lasts until the end of the goblin's next turn. Enemies take a -2 penalty to attack rolls while in the zone. Sustain Minor:<br>The zone persists until the end of the goblin's next turn, and the goblin can move it up to 5 squares.</div>
             </details>
         
             
@@ -241,15 +245,17 @@
                 
             
             <details class="usage-at-will">
-                <summary><span class="bold">Eye Rays</span> (at-will)</summary>
-                <div>At-Will Standard, At-Will The eye of flame can use up to two eye ray powers (chosen from the list below), at least one of which must be a fire ray. Each power must target a different creature. Using eye rays does not provoke opportunity attacks. 1-Fire Ray (Fire):<br>range 8;<br>+17 vs. Reflex;<br>2d8 + 6 fire damage. 2-Telekinesis Ray:<br>range 8;<br>+17 vs. Fortitude;<br>the target slides 4 squares. 3-Fear Ray (Fear):<br>range 8;<br>+17 vs. Will;<br>the target moves its speed away from the eye of flame by the safest route possible and takes a -2 penalty to attack rolls (save ends)</div>
+                <summary><span class="bold">Goblin Tactics</span> (at-will)</summary>
+                <div>At-Will Triggered Trigger:<br>The goblin is missed by a melee attack. Effect (Immediate Reaction):<br>The goblin shifts 1 square.</div>
             </details>
         
             
             
-            <details class="">
-                <summary><span class="bold">Fiery Burst</span> (other)</summary>
-                <div>Fire Close burst 2 Trigger:<br>When first bloodied and again when the eye of flame is reduced to 0 hit points, +17 vs Reflex;<br>2d8+6 fire damage.</div>
+                
+            
+            <details class="usage-at-will">
+                <summary><span class="bold">Lead from the Rear</span> (at-will)</summary>
+                <div>At-Will Triggered Trigger:<br>An enemy hits the goblin with a ranged attack. Effect (Immediate Interrupt):<br>The goblin can change the attack's target to an adjacent ally of the goblin's level or lower.</div>
             </details>
         
     </div>
@@ -258,19 +264,19 @@
     <!-- SKILLS & ABILITIES -->
     <div class="section-title">Skills & Abilities</div>
     <div class="section-content">
-        <div><span class="bold">Skills:</span> Perception +15</div>
+        <div><span class="bold">Skills:</span> Perception +2, Stealth +10, Thievery +10</div>
         <div class="attribute-section">
             <div class="paired-stat">
-                <div><span class="bold">Str</span> 10 (+6)</div>
-                <div><span class="bold">Con</span> 18 (+10)</div>
+                <div><span class="bold">Str</span> 10 (+1)</div>
+                <div><span class="bold">Con</span> 14 (+3)</div>
             </div>
             <div class="paired-stat">
-                <div><span class="bold">Dex</span> 20 (+11)</div>
-                <div><span class="bold">Int</span> 14 (+8)</div>
+                <div><span class="bold">Dex</span> 15 (+3)</div>
+                <div><span class="bold">Int</span> 9 (+0)</div>
             </div>
             <div class="paired-stat">
-                <div><span class="bold">Wis</span> 19 (+10)</div>
-                <div><span class="bold">Cha</span> 23 (+12)</div>
+                <div><span class="bold">Wis</span> 13 (+2)</div>
+                <div><span class="bold">Cha</span> 18 (+5)</div>
             </div>
         </div>
     </div>
@@ -280,7 +286,11 @@
     <div class="section-content">
         <div>
             <span class="bold">Languages:</span>  (written),
-            DeepSpeech (spoken)
+            Common, Goblin (spoken)
+        </div>
+        
+        <div style="margin-top: 6px;">
+            <span class="bold">Equipment:</span> leather robes, staff implement .
         </div>
         
         <div style="margin-top: 6px;">
@@ -296,7 +306,7 @@
     var applyButton = document.getElementById("applyDamageButton");
     // Initialize current life to full HP
     var currentLife = parseInt(currentLifeDisplay.innerText) || 0;
-    var bloodied = parseInt("102") || 0;
+    var bloodied = parseInt("23") || 0;
     
     function applyDamage(){
         var damage = parseInt(damageInput.value) || 0;

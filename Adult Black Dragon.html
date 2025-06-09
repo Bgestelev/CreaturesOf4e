@@ -1,173 +1,356 @@
 
 <style>
-    .statblock { 
-        max-width: 500px; 
-        background: #fff; 
-        font-family: Arial, sans-serif;
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&family=Cinzel+Decorative:wght@700&family=Marcellus+SC&display=swap');
+
+    /* Overall container: subtle border, minimal lines */
+    .monster-block {
+        max-width: 600px;
+        margin: 0px auto;
+        font-family: 'Source Sans Pro', sans-serif;
+        background: #CDCBB5;
+        border: 1px solid #e2d4b7; /* Very light border */
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
     }
-    .header { 
-        background: #4b5320; 
-        color: white; 
-        padding: 10px; 
-        font-size: 20px; 
-        font-weight: bold; 
+
+    /* TOP BAR (Name, subtypes, level, XP) */
+    .monster-top {
+        color: #fff;
+        background: #4E5C2E;
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
     }
-    .subheader { 
-        background: #c8b68e; 
-        padding: 5px; 
-        font-size: 14px; 
-        font-style: italic; 
+    .monster-top-left {
+        display: flex;
+        flex-direction: column;
     }
-    /* Remove borders and alternate background colors for sections */
-    .statblock > .section {
-        padding: 10px;
-        border: none;
+    .monster-name {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 2px;
     }
-    /* Reverse the alternating order: odd sections get #e8ddc3, even sections get #c8b68e */
-    .statblock > .section:nth-of-type(odd) {
-        background: #e8ddc3;
+    .monster-subtypes {
+        font-size: 14px;
+        font-style: italic;
+        margin-left: 1px;
     }
-    .statblock > .section:nth-of-type(even) {
-        background: #c8b68e;
+    .monster-top-right {
+        text-align: right;
+        font-size: 14px;
+        margin-left: 10px;
     }
-    details { 
-        margin-top: 5px;
-        margin-bottom: 5px;
-        padding: 5px;
-        border-left: 4px solid #4b5320;
+
+    /* SECOND BAR (HP, AC, etc.) */
+    .monster-mid {
+        background: #E8E6D4;
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .monster-mid-left,
+    .monster-mid-right {
+        font-size: 14px;
+        line-height: 1.4em;
+        width: 49%;
+    }
+    .monster-mid-left .bold,
+    .monster-mid-right .bold {
+        font-weight: bold;
+    }
+    .monster-mid-left > div,
+    .monster-mid-right > div {
+        margin-bottom: 6px;
+    }
+
+    /* Section Title Bars (e.g., TRAITS, STANDARD ACTIONS) */
+    .section-title {
+        background: #70774F; /* Dark olive heading bar */
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        font-size: 14px;
+        margin-top: 10px;  /* Spacing above heading */
+        margin-bottom: 0; /* No thick line under heading */
+    }
+
+    /* Section content uses padding/margin, no lines */
+    .section-content {
+        background: #E8E6D4;
+        padding: 8px;
+        margin-bottom: 8px; /* Spacing after content block */
+    }
+
+    /* Collapsible details for traits/actions (no thick lines) */
+    details {
+        background: #fff;
+        margin: 6px 0;
+        padding: 6px 8px;
+        border-left: 4px solid #4b5320; /* Simple left bar */
     }
     details summary {
         cursor: pointer;
         font-weight: bold;
     }
-    .bold { 
-        font-weight: bold; 
+
+    /* Tinted backgrounds for usage types */
+    .usage-at-will { background-color: #90d390bf; }
+    .usage-recharge { background-color: #e4e473db; }
+    .usage-encounter { background-color: #ae1a328c; }
+
+    .bold {
+        font-weight: 700;
+    }
+
+    /* Attribute, skills, languages, etc. */
+    .attribute-section {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 6px;
     }
     .paired-stat {
         display: flex;
         flex-direction: column;
+        margin-right: 10px;
+        margin-bottom: 4px;
     }
-    /* New attribute section style: display as a row */
-    .attribute-section {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+
+    /* Damage application controls */
+    #applyDamageButton {
+        border-radius: 3px;
+        background-color: #4b5320;
+        color: #fff;
+        border: none;
+        padding: 3px 6px;
+        cursor: pointer;
+        font-size: 13px;
+        margin-left: 6px;
+    }
+    #damageInput {
+        width: 60px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        padding: 3px;
+        font-size: 13px;
+        margin-left: 5px;
     }
 </style>
-<div class="statblock">
-    <div class="header">Adult Black Dragon - Level 11 lurker / solo</div>
-    <div class="subheader">
-        <span style="float: left;">Large natural magical, Aquatic, dragon | Evil</span>
-        <span style="float: right;">XP: 3000</span>
-        <div style="clear: both;"></div>
+
+<div class="monster-block">
+    <!-- TOP BAR -->
+    <div class="monster-top">
+        <div class="monster-top-left">
+            <div class="monster-name">Adult Black Dragon</div>
+            <div class="monster-subtypes">Large natural magical, Aquatic, dragon</div>
+        </div>
+        <div class="monster-top-right">
+            <div>Level 11 lurker / solo</div>
+            <div>XP: 3000</div>
+        </div>
     </div>
-    <div class="section">
-        <span class="bold">Initiative:</span> +15 | <span class="bold">Senses:</span> Normal Vision, Darkvision
+
+    <!-- SECOND BAR (HP, AC, defenses, etc.) -->
+    <div class="monster-mid">
+        <div class="monster-mid-left">
+            <div>
+                <span class="bold">HP</span> 560;
+                <span class="bold">Bloodied</span> 280;
+            </div>
+            <div>
+                <span class="bold">AC</span> 28,
+                <span class="bold">Fortitude</span> 24,
+                <span class="bold">Reflex</span> 26,
+                <span class="bold">Will</span> 23
+            </div>
+            <div>
+                <span class="bold">Speed</span> 8, fly 8 (hover);overland flight 10;swim 8
+            </div>
+            <!-- Current Health & Damage Taken -->
+            <div>
+                <span class="bold">Current Health:</span>
+                <span id="currentLifeDisplay">560</span>
+                <input type="number" id="damageInput" placeholder="0" />
+                <button id="applyDamageButton">Apply</button>
+            </div>
+        </div>
+        <div class="monster-mid-right">
+            <div>
+                <span class="bold">Initiative</span> +15
+            </div>
+            <div>
+                <span class="bold">Senses</span> Normal Vision, Darkvision
+            </div>
+            
+            <div>
+                <span class="bold">Action Points:</span> 2
+            </div>
+            
+        </div>
     </div>
-    <div class="section">
-        <span class="bold">HP:</span> 560 | <span class="bold">Bloodied:</span> 280
-    </div>
-    <div class="section">
-        <span class="bold">AC:</span> 28, <span class="bold">Fort:</span> 24, <span class="bold">Ref:</span> 26, <span class="bold">Will:</span> 23
-    </div>
-    <div class="section">
-        <span class="bold">Speed:</span> 8, fly 8 (hover);overland flight 10;swim 8
-    </div>
-    
-    <div class="section">
-        <span class="bold">Action Points:</span> 2
-    </div>
-    
-    <div class="section">
-        <span class="bold">Resistances:</span> 20 acid | 
-        <span class="bold">Vulnerabilities:</span>  | 
+
+    <!-- RESIST, VULN, IMMUNE -->
+    <div class="section-content" style="margin-top: 8px;">
+        <span class="bold">Resistances:</span> 20 acid |
+        <span class="bold">Vulnerabilities:</span>  |
         <span class="bold">Immunities:</span> 
     </div>
+
+    <!-- TRAITS -->
     
+
+    <!-- ACTIONS -->
     
-    
-    
-    <div class="section">
-        <strong>Actions:</strong>
+    <div class="section-title">Standard Actions</div>
+    <div class="section-content">
         
             
-            <details style="background-color: #90d390bf;">
             
+                
+            
+            <details class="usage-at-will">
                 <summary><span class="bold">Bite</span> (at-will)</summary>
                 <div>Basic Attack At-Will ✦ Acid Standard Reach 2 +16 vs AC;<br>1d8+4 damage, and ongoing 5 acid damage (save ends).</div>
             </details>
         
             
-            <details style="background-color: #90d390bf;">
             
+                
+            
+            <details class="usage-at-will">
                 <summary><span class="bold">Claw</span> (at-will)</summary>
                 <div>Basic Attack At-Will Standard Reach 2 +16 vs AC;<br>1d6+4 damage.</div>
             </details>
         
             
-            <details style="background-color: #90d390bf;">
             
+                
+            
+            <details class="usage-at-will">
                 <summary><span class="bold">Double Attack</span> (at-will)</summary>
                 <div>At-Will Standard The dragon makes two claw attacks</div>
             </details>
         
             
-            <details style="background-color: #90d390bf;">
             
+                
+            
+            <details class="usage-at-will">
                 <summary><span class="bold">Tail Slash</span> (at-will)</summary>
                 <div>At-Will Immediate Reaction Trigger:<br>When a melee attack misses the dragon, at-will The dragon uses its tail to attack the target;<br>reach 2;<br>targets the enemy that missed it;<br>+16 vs AC;<br>1d8+6 damage, and the target is pushed 1 square.</div>
             </details>
         
             
-            <details style="background-color: #e4e473db;">
             
+                
+            
+            <details class="usage-recharge">
                 <summary><span class="bold">Breath Weapon</span> (recharge)</summary>
                 <div>Recharge 5-6 ✦ Acid Standard Close blast 5 +13 vs Reflex;<br>2d8+3 acid damage, and the target takes ongoing 5 acid damage and takes a -4 penalty to AC (save ends both)..</div>
             </details>
         
             
-            <details style="background-color: #ae1a328c;">
             
+                
+            
+            <details class="usage-encounter">
                 <summary><span class="bold">Bloodied Breath</span> (encounter)</summary>
                 <div>Encounter ✦ Acid Free Trigger:<br>When first bloodied, encounter The dragon's breath weapon recharges, and the dragon uses it immediately.</div>
             </details>
         
             
-            <details style="background-color: #e4e473db;">
             
+                
+            
+            <details class="usage-recharge">
                 <summary><span class="bold">Cloud of Darkness</span> (recharge)</summary>
                 <div>Recharge 4-6 ✦ Zone Standard Close burst 2 Sustain Minor This power creates a zone of darkness that remains in place until the end of the dragon's next turn. The zone blocks line of sight for all creatures except the dragon. Any creature entirely within the area (except the dragon) is blinded</div>
             </details>
         
             
-            <details style="background-color: #ae1a328c;">
             
+                
+            
+            <details class="usage-encounter">
                 <summary><span class="bold">Frightful Presence</span> (encounter)</summary>
                 <div>Encounter ✦ Fear Standard Close burst 5 Targets enemies;<br>+13 vs Will;<br>the target is stunned until the end of the dragon's next turn. Aftereffect:<br>The target takes a -2 penalty to attack rolls (save ends).</div>
             </details>
         
     </div>
     
-    
-    <div class="section">
-        <span class="bold">Languages:</span>  (written), Common, Draconic (spoken)
-    </div>
-    <div class="section">
-        <span class="bold">Skills:</span> Nature +13, Perception +13, Stealth +21
-    </div>
-    <div class="section attribute-section">
-        <div class="paired-stat">
-            <div><span class="bold">Str</span> 18 (+9)</div>
-            <div><span class="bold">Con</span> 16 (+8)</div>
+
+    <!-- SKILLS & ABILITIES -->
+    <div class="section-title">Skills & Abilities</div>
+    <div class="section-content">
+        <div><span class="bold">Skills:</span> Nature +13, Perception +13, Stealth +21</div>
+        <div class="attribute-section">
+            <div class="paired-stat">
+                <div><span class="bold">Str</span> 18 (+9)</div>
+                <div><span class="bold">Con</span> 16 (+8)</div>
+            </div>
+            <div class="paired-stat">
+                <div><span class="bold">Dex</span> 22 (+11)</div>
+                <div><span class="bold">Int</span> 14 (+7)</div>
+            </div>
+            <div class="paired-stat">
+                <div><span class="bold">Wis</span> 16 (+8)</div>
+                <div><span class="bold">Cha</span> 12 (+6)</div>
+            </div>
         </div>
-        <div class="paired-stat">
-            <div><span class="bold">Dex</span> 22 (+11)</div>
-            <div><span class="bold">Int</span> 14 (+7)</div>
+    </div>
+
+    <!-- LANGUAGES & OTHER -->
+    <div class="section-title">Languages & Other</div>
+    <div class="section-content">
+        <div>
+            <span class="bold">Languages:</span>  (written),
+            Common, Draconic (spoken)
         </div>
-        <div class="paired-stat">
-            <div><span class="bold">Wis</span> 16 (+8)</div>
-            <div><span class="bold">Cha</span> 12 (+6)</div>
+        
+        <div style="margin-top: 6px;">
+            <span class="bold">Alignment:</span> Evil
         </div>
     </div>
-    
 </div>
+
+<script>
+(function(){
+    var currentLifeDisplay = document.getElementById("currentLifeDisplay");
+    var damageInput = document.getElementById("damageInput");
+    var applyButton = document.getElementById("applyDamageButton");
+    // Initialize current life to full HP
+    var currentLife = parseInt(currentLifeDisplay.innerText) || 0;
+    var bloodied = parseInt("280") || 0;
+    
+    function applyDamage(){
+        var damage = parseInt(damageInput.value) || 0;
+        currentLife -= damage;
+        if(currentLife < 0) currentLife = 0;
+        currentLifeDisplay.innerText = currentLife;
+
+        /* If current life <= bloodied, make the text bold & crimson.
+           Otherwise, revert to normal. */
+        if(currentLife <= bloodied){
+            currentLifeDisplay.style.color = "crimson";
+            currentLifeDisplay.style.fontWeight = "bold";
+        } else {
+            currentLifeDisplay.style.color = "";
+            currentLifeDisplay.style.fontWeight = "";
+        }
+
+        damageInput.value = "";
+    }
+    
+    applyButton.addEventListener("click", applyDamage);
+    damageInput.addEventListener("keydown", function(e) {
+        if(e.key === "Enter"){
+            applyDamage();
+            e.preventDefault();
+        }
+    });
+})();
+</script>
